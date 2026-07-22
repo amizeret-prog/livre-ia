@@ -14,7 +14,7 @@
 
 const OWNER_EMAIL = "amizeret@gmail.com";
 // ⬇ Domaine à VÉRIFIER dans Resend. Pour un test rapide, utilisez "onboarding@resend.dev".
-const FROM = "Aurélien Mizeret <contact@aurelienmizeret.com>";
+const FROM = "Aurélien Mizeret <hello@aurelienmizeret.com>";
 
 // Coordonnées publiques affichées dans l'e-mail de confirmation au visiteur.
 const LINKS = {
