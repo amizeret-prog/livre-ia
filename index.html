@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ce que l'IA fait de nous — Aurélien Mizeret</title>
+<meta name="description" content="Un essai d'Aurélien Mizeret. Nous n'aurons pas été remplacés — nous nous serons absentés. Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle.">
+<meta name="author" content="Aurélien Mizeret">
+<meta property="og:title" content="Ce que l'IA fait de nous">
+<meta property="og:description" content="On ne se fait pas remplacer. On se délègue. Les bonnes questions pour rester humains à l'ère de l'IA.">
+<meta property="og:type" content="book">
+<meta property="og:locale" content="fr_FR">
+<!-- ⬇ Ajustez ces 2 URLs vers votre hébergement réel (domaine + image) -->
+<meta property="og:url" content="https://aurelienmizeret.com/ce-que-lia-fait-de-nous/">
+<meta property="og:site_name" content="Aurélien Mizeret">
+<meta property="og:image" content="https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ce que l'IA fait de nous — un essai d'Aurélien Mizeret">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ce que l'IA fait de nous">
+<meta name="twitter:description" content="On ne se fait pas remplacer. On se délègue. Les bonnes questions pour rester humains à l'ère de l'IA.">
+<meta name="twitter:image" content="https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg">
+<link rel="canonical" href="https://aurelienmizeret.com/ce-que-lia-fait-de-nous/">
+<meta name="theme-color" content="#F4F2EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23255C82' stroke-opacity='.4'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23255C82' stroke-opacity='.7'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23C99A4A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Clair et lisible — ivoire chaud, bleu profond, braise ambrée */
+  --paper:#F4F2EA;
+  --paper-2:#FBFAF4;
+  --paper-3:#ECE9DE;
+  --azur:#E6EDF3;
+
+  --encre:#152230;      /* titres — bleu quasi noir */
+  --texte:#374553;      /* corps */
+  --muet:#67757F;       /* labels discrets */
+
+  --ligne:#E2DED2;
+  --ligne-2:#D6D2C4;
+
+  --bleu:#255C82;       /* accent principal (boutons, liens) */
+  --bleu-fonce:#1C4866;
+  --bleu-clair:#3B7BA8;
+  --laiton:#A16A22;     /* accent chaud lisible sur clair (yeux-brow) */
+  --ambre:#C99A4A;      /* braise du foyer */
+  --ivoire:#F6F3E9;     /* texte sur les blocs bleus */
+
+  --shadow-sm:0 1px 2px rgba(21,34,48,.05),0 10px 26px rgba(21,34,48,.06);
+  --shadow-md:0 20px 48px -18px rgba(21,34,48,.2);
+  --shadow-blue:0 18px 44px -18px rgba(28,72,102,.4);
+
+  --maxw:1160px;
+  --display:"Newsreader",Georgia,serif;
+  --sans:"Figtree",system-ui,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--paper);color:var(--texte);
+  font-family:var(--sans);font-size:18px;line-height:1.72;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+img{max-width:100%}
+h1,h2,h3,h4{font-family:var(--display);color:var(--encre);line-height:1.06;letter-spacing:-.018em;font-weight:500;font-optical-sizing:auto}
+.serif{font-family:var(--display);font-weight:400}
+i,em{font-style:italic}
+::selection{background:var(--bleu);color:var(--ivoire)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,var(--laiton),transparent)}
+.eyebrow.center-eb::before{display:none}
+.section{padding:116px 0;position:relative}
+.section-head{max-width:680px;margin-bottom:58px}
+.section-head h2{font-size:clamp(32px,4.7vw,55px);margin-top:20px;font-weight:500}
+.section-head p{margin-top:20px;color:var(--texte);font-size:19px;max-width:54ch}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.tint{color:var(--bleu)}
+
+.panel-2{background:var(--paper-3)}
+.panel-azur{background:var(--azur)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15px;
+  padding:15px 28px;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:.25s ease;white-space:nowrap}
+.btn-primary{background:var(--bleu);color:var(--ivoire);box-shadow:var(--shadow-blue)}
+.btn-primary:hover{background:var(--bleu-fonce);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--encre);border-color:var(--ligne-2)}
+.btn-ghost:hover{border-color:var(--bleu);color:var(--bleu);transform:translateY(-2px)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.btn:focus-visible{outline:2.5px solid var(--bleu-clair);outline-offset:3px}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:60;background:rgba(244,242,234,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:.3s}
+header.nav.scrolled{border-bottom-color:var(--ligne);background:rgba(244,242,234,.96)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:13px;font-family:var(--display);font-weight:600;font-size:20px;color:var(--encre);letter-spacing:-.01em}
+.mark{width:30px;height:30px;flex:none}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--texte);transition:.2s}
+.nav-links a:hover{color:var(--encre)}
+.nav-links .btn{padding:11px 22px;font-size:14px}
+.nav-toggle{display:none;background:none;border:0;color:var(--encre);cursor:pointer;padding:8px}
+@media (max-width:960px){
+  .nav-links{position:fixed;inset:76px 0 auto 0;flex-direction:column;gap:0;background:var(--paper-2);
+    border-bottom:1px solid var(--ligne);max-height:0;overflow:hidden;transition:max-height .35s ease;box-shadow:var(--shadow-md)}
+  .nav-links.open{max-height:460px}
+  .nav-links a{padding:16px 30px;width:100%;border-top:1px solid var(--ligne);font-size:16px}
+  .nav-links .btn{margin:16px 30px;justify-content:center}
+  .nav-toggle{display:block}
+}
+
+/* hero */
+.hero{padding:92px 0 108px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;right:-4%;top:0;pointer-events:none;
+  background:radial-gradient(circle,rgba(201,154,74,.16),rgba(201,154,74,.05) 44%,transparent 68%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative;z-index:2}
+.hero-kick{margin-bottom:28px}
+.hero h1{font-size:clamp(44px,6.6vw,84px);letter-spacing:-.025em;font-weight:500;color:var(--encre)}
+.hero h1 .abs{font-style:italic;font-weight:400;color:var(--bleu)}
+.hero-sub{margin:30px 0 38px;font-size:20px;color:var(--texte);max-width:47ch;line-height:1.6}
+.hero-sub b{color:var(--encre);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-by{margin-top:34px;font-family:var(--sans);font-weight:500;font-size:14px;color:var(--muet)}
+.hero-by b{color:var(--texte);font-weight:600}
+
+/* le foyer */
+.foyer{position:relative;width:100%;max-width:452px;margin:0 auto;aspect-ratio:1/1}
+.foyer svg{width:100%;height:100%;overflow:visible}
+.ring{fill:none;stroke:var(--bleu)}
+.ring.slow{transform-origin:center;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.glow{filter:blur(3px)}
+@keyframes breathe{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:.95;transform:scale(1.06)}}
+.ember-core{transform-origin:center;animation:breathe 5.5s ease-in-out infinite}
+.foyer-word{position:absolute;transform:translate(-50%,-50%);font-family:var(--display);font-style:italic;
+  font-weight:400;font-size:20px;color:var(--encre);white-space:nowrap;letter-spacing:.01em}
+.fw-top{left:50%;top:3%}
+.fw-left{left:12%;top:83%}
+.fw-right{left:88%;top:83%}
+.fw-c{left:50%;top:50%;color:var(--bleu);font-size:22px;font-weight:500}
+@media (prefers-reduced-motion:reduce){.ember-core,.ring.slow{animation:none}.ember-core{opacity:.92}}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:46px}
+  .foyer{order:-1;max-width:318px}
+  .foyer-word{font-size:16px}.fw-c{font-size:18px}
+}
+
+/* reframe */
+.reframe-inner{max-width:920px}
+.reframe .lead{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.6vw,42px);line-height:1.26;color:var(--encre);letter-spacing:-.018em}
+.reframe .lead .c{font-style:italic;font-weight:400;color:var(--bleu)}
+.reframe p{margin-top:28px;font-size:19px;color:var(--texte)}
+.reframe .k{color:var(--encre);font-weight:600}
+
+/* mouvements */
+.mv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.mv{background:var(--paper-2);border:1px solid var(--ligne);border-radius:var(--r);padding:36px 32px;box-shadow:var(--shadow-sm);
+  transition:.3s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.mv::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--bleu),var(--ambre));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.mv:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--ligne-2)}
+.mv:hover::before{transform:scaleX(1)}
+.mv .num{font-family:var(--display);font-style:italic;font-size:21px;color:var(--bleu);margin-bottom:18px}
+.mv h3{font-size:26px;margin-bottom:12px;font-weight:500}
+.mv .d{font-size:16.5px;color:var(--texte);flex:1;line-height:1.62}
+.mv .chaps{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{font-family:var(--sans);font-weight:500;font-size:12.5px;color:var(--texte);background:var(--paper-3);
+  border:1px solid var(--ligne);border-radius:100px;padding:6px 13px}
+@media (max-width:860px){.mv-grid{grid-template-columns:1fr}}
+
+/* QUIZ */
+.quiz-wrap{max-width:760px;margin:0 auto;background:var(--paper-2);
+  border:1px solid var(--ligne-2);border-radius:26px;padding:52px 48px;box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.quiz-wrap::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;right:-150px;top:-160px;
+  background:radial-gradient(circle,var(--ambre),transparent 66%);opacity:.14}
+.quiz-inner{position:relative;z-index:2}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.quiz-count{font-family:var(--display);font-style:italic;font-size:19px;color:var(--muet)}
+.quiz-dots{display:flex;gap:7px}
+.qdot{width:8px;height:8px;border-radius:50%;background:var(--ligne-2);transition:.3s}
+.qdot.active{background:var(--bleu);transform:scale(1.2)}
+.qdot.done{background:var(--ambre)}
+.quiz-q{font-family:var(--display);font-weight:500;font-size:clamp(23px,3vw,31px);line-height:1.22;color:var(--encre);margin-bottom:28px;letter-spacing:-.01em;min-height:66px}
+.quiz-opts{display:flex;flex-direction:column;gap:12px}
+.qopt{text-align:left;background:var(--paper);border:1.5px solid var(--ligne);border-radius:14px;padding:18px 20px;
+  font-family:var(--sans);font-size:16.5px;font-weight:500;color:var(--encre);cursor:pointer;transition:.2s;display:flex;align-items:center;gap:14px}
+.qopt .bullet{width:20px;height:20px;border-radius:50%;border:1.7px solid var(--ligne-2);flex:none;transition:.2s;position:relative}
+.qopt:hover{border-color:var(--bleu);transform:translateX(3px);background:var(--azur)}
+.qopt:hover .bullet{border-color:var(--bleu)}
+.qopt.chosen{border-color:var(--bleu);background:rgba(37,92,130,.08)}
+.qopt.chosen .bullet{border-color:var(--bleu);background:var(--bleu)}
+.qopt.chosen .bullet::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--paper-2)}
+.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:14px}
+.quiz-back{background:none;border:0;color:var(--muet);font-family:var(--sans);font-weight:500;font-size:14px;cursor:pointer;transition:.2s;padding:8px 0}
+.quiz-back:hover{color:var(--encre)}
+.quiz-back[disabled]{opacity:0;pointer-events:none}
+.quiz-hint{font-family:var(--display);font-style:italic;color:var(--muet);font-size:16px}
+
+.quiz-result{display:none;text-align:center}
+.quiz-result.show{display:block;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.qr-eb{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);margin-bottom:14px}
+.qr-title{font-family:var(--display);font-weight:500;font-size:clamp(29px,4vw,42px);color:var(--encre);margin-bottom:8px}
+.qr-title .em{font-style:italic;font-weight:400;color:var(--bleu)}
+.qr-meter{height:8px;border-radius:100px;background:var(--paper-3);border:1px solid var(--ligne);margin:26px auto 8px;max-width:360px;overflow:hidden}
+.qr-fill{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--ambre),var(--bleu));transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.qr-scale{display:flex;justify-content:space-between;max-width:360px;margin:0 auto 26px;font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muet)}
+.qr-body{font-size:18px;color:var(--texte);max-width:52ch;margin:0 auto 28px;line-height:1.62}
+.qr-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+@media (max-width:620px){.quiz-wrap{padding:38px 24px}}
+
+/* questions */
+.q-grid{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--ligne);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+.qcell{padding:38px 34px;border-bottom:1px solid var(--ligne);border-right:1px solid var(--ligne);transition:.3s}
+.qcell:hover{background:var(--azur)}
+.qcell:nth-child(2n){border-right:0}
+.qcell:nth-last-child(-n+2){border-bottom:0}
+.qcell .qn{font-family:var(--display);font-style:italic;font-size:19px;color:var(--laiton);margin-bottom:14px}
+.qcell p{font-family:var(--display);font-weight:500;font-size:23px;line-height:1.32;color:var(--encre);letter-spacing:-.01em}
+@media (max-width:720px){
+  .q-grid{grid-template-columns:1fr}
+  .qcell{border-right:0}
+  .qcell:nth-last-child(2){border-bottom:1px solid var(--ligne)}
+}
+
+/* quatrième — le seul bloc sombre, comme une couverture */
+.back{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.back-card{background:var(--bleu);color:var(--ivoire);border-radius:22px;padding:54px 46px;box-shadow:var(--shadow-blue);position:relative;overflow:hidden}
+.back-card::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-130px;bottom:-150px;
+  background:radial-gradient(circle,var(--ambre),transparent 66%);opacity:.32}
+.back-card .bq{font-family:var(--display);font-weight:500;font-size:32px;line-height:1.22;letter-spacing:-.018em;position:relative;z-index:2;color:var(--ivoire)}
+.back-card .bq .abs{font-style:italic;font-weight:400;color:#F0D9A8}
+.back-card .meta{margin-top:30px;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,243,233,.7);position:relative;z-index:2}
+.back-body p{margin-bottom:20px;font-size:18px;color:var(--texte)}
+.back-body p.opener{color:var(--encre);font-family:var(--display);font-weight:500;font-size:23px;line-height:1.38}
+@media (max-width:820px){.back{grid-template-columns:1fr;gap:34px}}
+
+/* extrait */
+.excerpt-card{max-width:820px;border-radius:22px;padding:56px 52px;position:relative;
+  background:var(--paper-2);border:1px solid var(--ligne);box-shadow:var(--shadow-md);margin:0 auto}
+.excerpt-card .qm{font-family:var(--display);font-size:78px;line-height:.3;color:var(--bleu);opacity:.42;height:40px}
+.excerpt-card p{font-family:var(--display);font-weight:500;font-size:clamp(21px,2.5vw,26px);line-height:1.5;color:var(--encre);margin-bottom:20px;letter-spacing:-.01em}
+.excerpt-card p .c{font-style:italic;font-weight:400;color:var(--bleu)}
+.excerpt-card .meta{margin-top:26px;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muet)}
+@media (max-width:620px){.excerpt-card{padding:40px 26px}}
+
+/* auteur */
+.author-grid{display:grid;grid-template-columns:290px 1fr;gap:56px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:20px;position:relative;overflow:hidden;box-shadow:var(--shadow-md);
+  background:radial-gradient(130% 100% at 32% 20%,#356A94,#152230);display:flex;align-items:center;justify-content:center;border:1px solid var(--ligne)}
+.portrait .mono{font-family:var(--display);font-weight:500;font-size:84px;color:#F0D9A8;opacity:.95}
+.portrait .note{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:var(--sans);font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,243,233,.65)}
+.author h2{font-size:clamp(31px,4vw,45px);margin:14px 0 6px;font-weight:500}
+.author .role{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--laiton);margin-bottom:22px}
+.author p{margin-bottom:16px;color:var(--texte)}
+.author p b{color:var(--encre);font-weight:600}
+.author .a-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.author .a-links a{font-family:var(--sans);font-weight:600;font-size:14px;
+  padding:12px 20px;border-radius:100px;border:1.5px solid var(--ligne-2);background:var(--paper);color:var(--encre);transition:.25s}
+.author .a-links a:hover{border-color:var(--bleu);color:var(--bleu);transform:translateY(-2px)}
+@media (max-width:760px){.author-grid{grid-template-columns:1fr;gap:34px}.portrait{max-width:240px}}
+
+/* commander */
+.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fmt{background:var(--paper-2);border:1px solid var(--ligne);border-radius:var(--r);padding:34px 30px;box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;position:relative;transition:.3s}
+.fmt:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--ligne-2)}
+.fmt.feat{border:1.5px solid var(--bleu);box-shadow:var(--shadow-blue)}
+.fmt .tag{position:absolute;top:-13px;left:28px;font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--bleu);color:var(--ivoire);padding:5px 13px;border-radius:100px}
+.fmt .name{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muet)}
+.fmt .price{font-family:var(--display);font-weight:500;font-size:46px;color:var(--encre);margin:12px 0 4px;letter-spacing:-.02em}
+.fmt .price small{font-size:18px;color:var(--muet)}
+.fmt ul{list-style:none;margin:20px 0 26px;flex:1}
+.fmt li{padding:11px 0;border-top:1px solid var(--ligne);font-size:16px;display:flex;gap:11px;align-items:baseline;color:var(--texte)}
+.fmt li svg{width:15px;height:15px;flex:none;color:var(--bleu);position:relative;top:3px}
+.fmt .btn{width:100%;justify-content:center}
+@media (max-width:860px){.fmt-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+
+/* newsletter (slim) */
+.news{max-width:900px;margin:0 auto;border:1px solid var(--ligne);border-radius:22px;padding:44px 42px;background:var(--paper-2);
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.news h3{font-size:28px;font-weight:500;margin-bottom:6px}
+.news p{color:var(--texte);font-size:16px}
+.news-form{display:flex;gap:10px;min-width:min(420px,80vw)}
+.news-form input{flex:1;background:var(--paper);border:1.5px solid var(--ligne-2);border-radius:100px;color:var(--encre);font-family:var(--sans);font-size:15px;padding:14px 20px}
+.news-form input::placeholder{color:var(--muet)}
+.news-note{grid-column:1/-1;font-family:var(--display);font-style:italic;font-size:15px;color:var(--muet);margin-top:-6px}
+@media (max-width:760px){.news{grid-template-columns:1fr}.news-form{min-width:0}}
+
+/* contact */
+.contact-card{max-width:820px;margin:0 auto;background:var(--paper-2);border:1px solid var(--ligne);border-radius:24px;padding:52px 48px;box-shadow:var(--shadow-md)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.02em;color:var(--texte)}
+.field label .req{color:var(--laiton)}
+.field input,.field select,.field textarea{background:var(--paper);border:1.5px solid var(--ligne-2);border-radius:12px;
+  color:var(--encre);font-family:var(--sans);font-size:16px;padding:14px 16px;transition:.2s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--bleu)}
+.field textarea{resize:vertical;min-height:130px;line-height:1.55}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236C7A70' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+.field .err{font-size:13px;color:var(--laiton);min-height:0;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--laiton)}
+.field.invalid .err{display:block}
+.form-actions{display:flex;align-items:center;gap:18px;margin-top:8px;flex-wrap:wrap}
+.form-actions .btn{padding:15px 34px}
+.form-privacy{font-family:var(--display);font-style:italic;font-size:15px;color:var(--muet)}
+.form-success{display:none;text-align:center;padding:20px 0}
+.form-success.show{display:block;animation:fade .5s ease}
+.form-success .ok{width:56px;height:56px;border-radius:50%;background:rgba(37,92,130,.1);border:1.5px solid var(--bleu);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--bleu)}
+.form-success h3{font-size:28px;font-weight:500;margin-bottom:8px}
+.form-success p{color:var(--texte);max-width:44ch;margin:0 auto}
+@media (max-width:640px){.contact-card{padding:38px 24px}.form-row{grid-template-columns:1fr}}
+
+/* faq */
+.faq-list{max-width:860px;margin:0 auto}
+.faq-item{background:var(--paper-2);border:1px solid var(--ligne);border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;font-family:var(--display);font-weight:500;font-size:20px;color:var(--encre);
+  padding:24px 56px 24px 26px;position:relative;transition:color .2s;letter-spacing:-.01em}
+.faq-q:hover{color:var(--bleu)}
+.faq-q .ic{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:20px;height:20px;transition:transform .3s;color:var(--bleu)}
+.faq-item.open .faq-q .ic{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 26px 26px;color:var(--texte)}
+@media (max-width:620px){.faq-q{font-size:18px;padding:20px 50px 20px 22px}.faq-a p{padding:0 22px 22px}}
+
+/* footer */
+footer{background:var(--encre);color:rgba(246,243,233,.7);padding:72px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;margin-bottom:50px}
+.foot-brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:20px;color:var(--ivoire);margin-bottom:16px}
+.foot-p{max-width:34ch;font-size:15.5px;color:rgba(246,243,233,.5)}
+.foot-col h4{font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,243,233,.45);margin-bottom:16px}
+.foot-col a{display:block;color:rgba(246,243,233,.72);font-size:15.5px;padding:6px 0;transition:.2s}
+.foot-col a:hover{color:#F0D9A8}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:26px;border-top:1px solid rgba(246,243,233,.12);
+  font-family:var(--sans);font-weight:500;font-size:13px;color:rgba(246,243,233,.45)}
+@media (max-width:800px){.foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* skip link — accessibilité */
+.skip-link{position:absolute;left:16px;top:-60px;z-index:200;background:var(--bleu);color:var(--ivoire);
+  font-family:var(--sans);font-weight:600;font-size:14px;padding:12px 20px;border-radius:0 0 12px 12px;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* rangées de liens sociaux (icônes) */
+.social-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.social-row a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--ligne-2);background:var(--paper);color:var(--encre);transition:.25s}
+.social-row a svg{width:19px;height:19px}
+.social-row a:hover{border-color:var(--bleu);color:var(--bleu);transform:translateY(-2px)}
+.social-row.on-dark a{border-color:rgba(246,243,233,.2);background:transparent;color:rgba(246,243,233,.78)}
+.social-row.on-dark a:hover{border-color:#E4C081;color:#F0D9A8;transform:translateY(-2px)}
+
+/* premiers échos — preuve sociale */
+.echos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.echo{background:var(--paper-2);border:1px solid var(--ligne);border-radius:var(--r);padding:34px 30px;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.3s}
+.echo:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--ligne-2)}
+.echo .qm{font-family:var(--display);font-size:56px;line-height:.2;color:var(--bleu);opacity:.38;height:26px}
+.echo p{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.5;color:var(--encre);letter-spacing:-.01em;flex:1}
+.echo .who{margin-top:22px;padding-top:18px;border-top:1px solid var(--ligne);
+  font-family:var(--sans);font-weight:600;font-size:13.5px;color:var(--encre)}
+.echo .who span{display:block;font-weight:500;font-size:12.5px;color:var(--muet);margin-top:2px}
+@media (max-width:860px){.echos-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+
+/* canaux directs (contact) */
+.direct-channels{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+.btn-wa{background:var(--paper);color:var(--encre);border:1.5px solid var(--ligne-2)}
+.btn-wa svg{width:18px;height:18px}
+.btn-wa:hover{border-color:var(--bleu);color:var(--bleu);transform:translateY(-2px)}
+
+/* retour en haut */
+.to-top{position:fixed;right:22px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:50%;
+  background:var(--bleu);color:var(--ivoire);border:0;cursor:pointer;box-shadow:var(--shadow-blue);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s}
+.to-top svg{width:20px;height:20px}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--bleu-fonce);transform:translateY(-2px)}
+@media (max-width:600px){.to-top{right:16px;bottom:16px}}
+</style>
+
+<!-- Données structurées : aide Google & les réseaux à comprendre qu'il s'agit d'un livre.
+     Ajustez l'URL et l'ISBN si vous en avez un. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Ce que l'IA fait de nous",
+  "alternativeHeadline": "Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+  "description": "On ne se fait pas remplacer, on se délègue. Un essai d'Aurélien Mizeret sur ce que l'usage permanent de l'IA fait à notre rapport à la vérité, au réel, aux autres et à nous-mêmes.",
+  "inLanguage": "fr",
+  "numberOfPages": 220,
+  "bookFormat": "https://schema.org/Paperback",
+  "url": "https://aurelienmizeret.com/ce-que-lia-fait-de-nous/",
+  "image": "https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Aurélien Mizeret",
+    "jobTitle": "Consultant, formateur, architecte de la complexité",
+    "url": "https://aurelienmizeret.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
+      "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+      "https://www.eventbrite.fr/o/121541945462"
+    ]
+  },
+  "offers": [
+    {"@type": "Offer", "name": "Édition Kindle", "price": "7.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+    {"@type": "Offer", "name": "Broché", "price": "18.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
+    {"@type": "Offer", "name": "Exemplaire dédicacé", "price": "24.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#top" class="skip-link">Aller au contenu</a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Accueil">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="#255C82" stroke-opacity=".4"/>
+        <circle cx="16" cy="16" r="8.5" fill="none" stroke="#255C82" stroke-opacity=".7"/>
+        <circle cx="16" cy="16" r="4" fill="#C99A4A"/>
+      </svg>
+      Ce que l'IA fait de nous
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#livre">Le livre</a>
+      <a href="#mouvements">À l'intérieur</a>
+      <a href="#quiz">Le miroir</a>
+      <a href="#auteur">L'auteur</a>
+      <a href="#contact">Contact</a>
+      <a href="#commander" class="btn btn-primary">Commander</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="livre">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-kick"><span class="eyebrow">Essai · Aurélien Mizeret</span></div>
+      <h1>Nous n'aurons pas été remplacés.<br>Nous nous serons <span class="abs">absentés</span>.</h1>
+      <p class="hero-sub"><b>Ce que l'IA fait de nous.</b> Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle.</p>
+      <div class="hero-cta">
+        <!-- Remplacer le href par le lien Amazon -->
+        <a href="#commander" class="btn btn-primary">Commander le livre
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#extrait" class="btn btn-ghost">Lire un extrait</a>
+      </div>
+      <p class="hero-by">Un livre d'<b>Aurélien Mizeret</b> — consultant, formateur, éclaireur.</p>
+    </div>
+
+    <div class="foyer" aria-hidden="true">
+      <svg viewBox="0 0 452 452">
+        <defs>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#D9AE6A" stop-opacity=".42"/>
+            <stop offset="44%" stop-color="#C99A4A" stop-opacity=".16"/>
+            <stop offset="100%" stop-color="#C99A4A" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="core" cx="50%" cy="44%" r="58%">
+            <stop offset="0%" stop-color="#FBEBC7"/>
+            <stop offset="52%" stop-color="#E4C081"/>
+            <stop offset="100%" stop-color="#A16A22"/>
+          </radialGradient>
+        </defs>
+        <circle class="glow" cx="226" cy="226" r="216" fill="url(#halo)"/>
+        <circle class="ring slow" cx="226" cy="226" r="206" stroke-opacity=".2" stroke-width="1" stroke-dasharray="2 10"/>
+        <circle class="ring" cx="226" cy="226" r="154" stroke-opacity=".32" stroke-width="1.2"/>
+        <circle class="ring" cx="226" cy="226" r="102" stroke-opacity=".5" stroke-width="1.4"/>
+        <g class="ember-core">
+          <circle cx="226" cy="226" r="54" fill="url(#core)"/>
+          <circle cx="226" cy="226" r="54" fill="none" stroke="#F2DDB2" stroke-opacity=".7" stroke-width="1.5"/>
+        </g>
+      </svg>
+      <span class="foyer-word fw-top">La vérité</span>
+      <span class="foyer-word fw-left">Le réel</span>
+      <span class="foyer-word fw-right">La décision</span>
+      <span class="foyer-word fw-c">La conscience</span>
+    </div>
+  </div>
+</section>
+
+<!-- REFRAME -->
+<section class="section panel-2 reframe">
+  <div class="wrap reframe-inner">
+    <span class="eyebrow">On se trompe de débat</span>
+    <p class="lead" style="margin-top:22px">Pendant que les uns célèbrent l'<span class="c">outil</span> et que les autres réclament des <span class="c">lois</span>, l'IA fait quelque chose de plus profond et de plus silencieux : elle change notre rapport au vrai, au réel et aux autres.</p>
+    <p>Le danger n'est pas qu'une machine prenne notre place. C'est que, décision après décision, <span class="k">nous la lui cédions nous-mêmes</span> — sans jamais l'avoir décidé.</p>
+    <p>Ce livre ne vous apprend pas à mieux utiliser l'IA. Il vous rend plus conscient de ce qu'elle est en train de faire de vous.</p>
+  </div>
+</section>
+
+<!-- MOUVEMENTS -->
+<section class="section" id="mouvements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">À l'intérieur du livre</span>
+      <h2>Trois mouvements, un seul fil : rester conscient.</h2>
+    </div>
+    <div class="mv-grid">
+      <article class="mv reveal">
+        <div class="num">— I</div>
+        <h3>La lucidité</h3>
+        <p class="d">Sortir du faux débat. Ni utopie ni effondrement : comprendre ce qui se joue vraiment quand on tend à la machine une décision, une émotion, un jugement.</p>
+        <div class="chaps"><span class="chip">Le faux débat</span><span class="chip">Comme des poules avec un couteau</span><span class="chip">Ni bien ni mal</span></div>
+      </article>
+      <article class="mv reveal">
+        <div class="num">— II</div>
+        <h3>Les menaces silencieuses</h3>
+        <p class="d">La vérité qui se brouille, l'influence qui se personnalise, le réel qui se simule, la souveraineté qui s'efface. Le feu qui rassemblait devient la lueur d'écran qui sépare.</p>
+        <div class="chaps"><span class="chip">Le vrai et le vraisemblable</span><span class="chip">Qui décide à notre place ?</span><span class="chip">La fracture</span></div>
+      </article>
+      <article class="mv reveal">
+        <div class="num">— III</div>
+        <h3>Rester humains</h3>
+        <p class="d">La partie qui répare. Transmettre, redevenir pleinement humain, rallumer le cercle. Non pour se couper de l'outil, mais pour ne pas se perdre en lui.</p>
+        <div class="chaps"><span class="chip">Transmettre</span><span class="chip">Redevenir humain</span><span class="chip">Le courage</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ / MIROIR -->
+<section class="section panel-azur" id="quiz">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:44px">
+      <span class="eyebrow center-eb">Le miroir · 5 questions</span>
+      <h2 style="margin-top:16px">Où en êtes-vous, vraiment ?</h2>
+      <p style="margin-left:auto;margin-right:auto">Ce n'est pas un test — c'est un miroir. Cinq questions, aucune bonne réponse. Juste un moment pour voir où vous en êtes avec la machine.</p>
+    </div>
+
+    <div class="quiz-wrap reveal">
+      <div class="quiz-inner">
+        <div id="quizGame">
+          <div class="quiz-top">
+            <span class="quiz-count"><span id="qNow">1</span> / 5</span>
+            <div class="quiz-dots" id="qDots" aria-hidden="true"></div>
+          </div>
+          <p class="quiz-q" id="qText">…</p>
+          <div class="quiz-opts" id="qOpts"></div>
+          <div class="quiz-foot">
+            <button class="quiz-back" id="qBack" disabled>← Précédent</button>
+            <span class="quiz-hint">Choisissez ce qui vous ressemble le plus.</span>
+          </div>
+        </div>
+
+        <div class="quiz-result" id="quizResult" role="status" aria-live="polite">
+          <div class="qr-eb" id="qrEb">Votre reflet</div>
+          <h2 class="qr-title" id="qrTitle"></h2>
+          <div class="qr-meter"><div class="qr-fill" id="qrFill"></div></div>
+          <div class="qr-scale"><span>Pilote automatique</span><span>Présent</span></div>
+          <p class="qr-body" id="qrBody"></p>
+          <div class="qr-cta">
+            <a href="#newsletter" class="btn btn-primary">Recevoir le prologue</a>
+            <button class="btn btn-ghost" id="qRestart">Recommencer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section class="section" id="questions">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center-eb">Les bonnes questions</span>
+      <h2>Le livre ne vous donne pas de réponses.<br>Il vous rend les bonnes questions.</h2>
+    </div>
+    <div class="q-grid reveal">
+      <div class="qcell"><div class="qn">i.</div><p>Quand l'IA décide pour moi, qu'est-ce que je gagne — et qu'est-ce que je ne sais bientôt plus faire seul&nbsp;?</p></div>
+      <div class="qcell"><div class="qn">ii.</div><p>Si la machine me donne toujours raison, qui me dira que j'ai tort&nbsp;?</p></div>
+      <div class="qcell"><div class="qn">iii.</div><p>À quand remonte la dernière question que j'ai laissée ouverte, sans dégainer mon téléphone&nbsp;?</p></div>
+      <div class="qcell"><div class="qn">iv.</div><p>Une IA qui m'écoute et me réconforte : est-ce une présence, ou une anesthésie&nbsp;?</p></div>
+      <div class="qcell"><div class="qn">v.</div><p>Mon téléphone posé sur la table : il nous relie, ou il fait seulement semblant&nbsp;?</p></div>
+      <div class="qcell"><div class="qn">vi.</div><p>Mon attention : un acquis que je garde, ou un muscle que je laisse fondre&nbsp;?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUATRIÈME -->
+<section class="section panel-2" id="quatrieme">
+  <div class="wrap back">
+    <div class="reveal">
+      <div class="back-card">
+        <p class="bq">« Nous n'aurons pas été remplacés.<br><span class="abs">Nous nous serons absentés.</span> »</p>
+        <div class="meta">Quatrième de couverture · env. 220 pages</div>
+      </div>
+    </div>
+    <div class="back-body reveal">
+      <p class="opener">L'intelligence artificielle ne frappe pas à la porte comme une menace. Elle s'installe comme un confort.</p>
+      <p>Une réponse plus rapide, un choix déjà fait, un doute déjà levé. Et à chaque petit soulagement, quelque chose de discret nous quitte : le goût de chercher, la patience du réel, la présence à l'autre.</p>
+      <p>Aurélien Mizeret n'écrit ni pour rassurer ni pour effrayer. Il écrit en éclaireur — quelqu'un qui est allé voir devant, et qui revient. De la décision la plus intime jusqu'à la souveraineté des nations, il déroule un seul fil : ce que l'usage permanent de la machine fait à notre rapport à la vérité, au réel, à l'autre et à nous-mêmes.</p>
+      <p>Un livre pour ceux qui sentent que le vrai enjeu n'est pas la puissance des machines, mais la conscience de ceux qui les utilisent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRAIT -->
+<section class="section" id="extrait">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:46px">
+      <span class="eyebrow center-eb">Un extrait</span>
+      <h2 style="margin-top:14px">Les premières pages</h2>
+    </div>
+    <div class="excerpt-card reveal">
+      <div class="qm">“</div>
+      <p>Nous avons appris à craindre la machine qui prendrait notre place. Nous avons regardé la mauvaise porte.</p>
+      <p>Le remplacement, au moins, se voit. Il fait du bruit, il fait peur, il fait débat. <span class="c">L'auto-délégation</span>, elle, ne fait aucun bruit. Elle a le visage doux du service rendu.</p>
+      <p>On ne nous arrache rien. On nous propose. Et un jour, sans l'avoir décidé, on ne sait plus décider seul.</p>
+      <div class="meta">Prologue — L'éclaireur</div>
+    </div>
+    <div class="center reveal" style="margin-top:34px">
+      <a href="#newsletter" class="btn btn-ghost">Recevoir le prologue complet</a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTEUR -->
+<section class="section panel-2" id="auteur">
+  <div class="wrap author-grid">
+    <div class="portrait reveal">
+      <span class="mono">AM</span>
+      <span class="note">Portrait — à insérer</span>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">L'auteur</span>
+      <h2>Aurélien Mizeret</h2>
+      <div class="role">Consultant · Formateur · Éclaireur</div>
+      <p>Coach de dirigeants et « architecte de la complexité », Aurélien accompagne humains et organisations dans leurs décisions les plus difficiles — là où la stratégie, la dynamique collective et le travail intérieur ne font qu'un.</p>
+      <p>Spécialiste de l'humain avant d'être un observateur de la machine, il écrit ici en <b>éclaireur</b> : parti en avance sur la technologie, il revient au feu raconter ce qu'il a vu — et poser les questions que, dans le vacarme, nous ne prenons plus le temps de nous poser.</p>
+      <div class="a-links">
+        <a href="https://aurelienmizeret.com/" target="_blank" rel="noopener">aurelienmizeret.com →</a>
+        <a href="https://www.linkedin.com/in/aur%C3%A9lien-mizeret/" target="_blank" rel="noopener">LinkedIn →</a>
+        <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener">YouTube →</a>
+        <a href="https://www.eventbrite.fr/o/121541945462" target="_blank" rel="noopener">Événements →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREMIERS ÉCHOS (preuve sociale) -->
+<!-- ⬇ Remplacez ces 3 blocs par de vrais retours (lecteurs, presse, dirigeants).
+     Tant que vous n'en avez pas, vous pouvez masquer toute la section en ajoutant  style="display:none"  sur la balise de la section ci-dessous. -->
+<section class="section panel-azur" id="echos">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:46px">
+      <span class="eyebrow center-eb">Premiers échos</span>
+      <h2 style="margin-top:14px">Ils l'ont lu avant vous</h2>
+    </div>
+    <div class="echos-grid reveal">
+      <figure class="echo">
+        <div class="qm">“</div>
+        <p>Un livre qui ne fait pas peur et ne rassure pas : il réveille. J'ai reposé mon téléphone en le refermant.</p>
+        <figcaption class="who">Prénom Nom<span>Fonction · Organisation</span></figcaption>
+      </figure>
+      <figure class="echo">
+        <div class="qm">“</div>
+        <p>Rare : un texte sur l'IA qui parle vraiment de nous. Chaque chapitre m'a rendu une question que j'avais cessé de me poser.</p>
+        <figcaption class="who">Prénom Nom<span>Fonction · Organisation</span></figcaption>
+      </figure>
+      <figure class="echo">
+        <div class="qm">“</div>
+        <p>Lucide sans être moralisateur. À mettre entre les mains de tout dirigeant — et de tout parent.</p>
+        <figcaption class="who">Prénom Nom<span>Fonction · Média</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDER -->
+<section class="section" id="commander">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:52px">
+      <span class="eyebrow center-eb">Se procurer le livre</span>
+      <h2 style="margin-top:14px">Choisissez votre format</h2>
+    </div>
+    <div class="fmt-grid">
+      <article class="fmt reveal">
+        <div class="name">Numérique — Kindle</div>
+        <div class="price">7,99<small> €</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Lecture immédiate</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Liseuse, tablette, mobile</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Surlignage et notes</li>
+        </ul>
+        <!-- Lien Amazon Kindle -->
+        <a href="#" class="btn btn-ghost">Acheter l'ebook</a>
+      </article>
+      <article class="fmt feat reveal">
+        <span class="tag">Le plus offert</span>
+        <div class="name">Broché</div>
+        <div class="price">18,90<small> €</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>≈ 220 pages · beau papier</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>À annoter, prêter, offrir</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Expédition Amazon</li>
+        </ul>
+        <!-- Lien Amazon broché -->
+        <a href="#" class="btn btn-primary">Commander sur Amazon</a>
+      </article>
+      <article class="fmt reveal">
+        <div class="name">Dédicacé</div>
+        <div class="price">24,00<small> €</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Exemplaire signé par l'auteur</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Mot personnalisé</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Sur demande directe</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Le demander</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section panel-azur" style="padding:80px 0">
+  <div class="wrap">
+    <div class="news reveal" id="newsletter">
+      <div>
+        <h3>Recevez le prologue.</h3>
+        <p>Le premier chapitre en PDF et l'annonce de la sortie. Une lettre rare, jamais de spam.</p>
+      </div>
+      <form class="news-form" id="newsForm" novalidate>
+        <label for="newsEmail" style="position:absolute;left:-9999px">Votre email</label>
+        <input type="email" id="newsEmail" name="email" placeholder="votre@email.fr" autocomplete="email" required>
+        <button type="submit" class="btn btn-primary">Recevoir</button>
+      </form>
+      <p class="news-note" id="newsNote">Désinscription en un clic. Vos données restent les vôtres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:46px">
+      <span class="eyebrow center-eb">Écrire à l'auteur</span>
+      <h2 style="margin-top:14px">Un mot, une invitation, une question</h2>
+      <p style="margin-left:auto;margin-right:auto">Conférence, intervention, presse, exemplaire dédicacé — ou simplement une réaction au livre. Le lien réel commence par un message.</p>
+      <div class="direct-channels">
+        <a href="https://wa.me/33619958971" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.83-1.96-.92-.26-.1-.45-.14-.64.14-.19.28-.73.92-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.46-.48-.64-.48l-.54-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.35s1.01 2.73 1.15 2.92c.14.19 1.98 3.03 4.8 4.25.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.66-.68 1.9-1.33.23-.65.23-1.21.16-1.33-.07-.11-.26-.18-.54-.32z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.28-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.5 0-2.98-.4-4.27-1.16l-.31-.18-3.16.83.84-3.08-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Écrire sur WhatsApp
+        </a>
+        <a href="https://www.eventbrite.fr/o/121541945462" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 0 0 4v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-4V8z"/><path d="M13 6.5v11" stroke-dasharray="2 2.4"/></svg>
+          Voir mes événements
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-card reveal">
+      <!-- Formulaire branché sur Netlify Forms.
+           À la soumission, la fonction netlify/functions/submission-created.js
+           envoie l'e-mail stylé au visiteur + une copie à amizeret@gmail.com (via Resend). -->
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden aria-hidden="true"><label>Ne rien écrire ici : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="cName">Votre nom <span class="req">*</span></label>
+            <input type="text" id="cName" name="nom" autocomplete="name" placeholder="Prénom Nom">
+            <span class="err">Merci d'indiquer votre nom.</span>
+          </div>
+          <div class="field">
+            <label for="cEmail">Votre email <span class="req">*</span></label>
+            <input type="email" id="cEmail" name="email" autocomplete="email" placeholder="votre@email.fr">
+            <span class="err">Cette adresse email semble incomplète.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cSubject">Objet <span class="req">*</span></label>
+            <select id="cSubject" name="objet">
+              <option value="" selected disabled>Choisissez…</option>
+              <option>Un mot à l'auteur</option>
+              <option>Conférence ou intervention</option>
+              <option>Presse &amp; médias</option>
+              <option>Commande d'un exemplaire dédicacé</option>
+              <option>Commande en volume (entreprise, école)</option>
+              <option>Autre</option>
+            </select>
+            <span class="err">Merci de choisir un objet.</span>
+          </div>
+          <div class="field">
+            <label for="cOrg">Structure <span style="color:var(--muet);font-weight:500">(facultatif)</span></label>
+            <input type="text" id="cOrg" name="structure" placeholder="Entreprise, média, association…">
+            <span class="err"></span>
+          </div>
+        </div>
+        <div class="field full" style="margin-bottom:22px">
+          <label for="cMsg">Votre message <span class="req">*</span></label>
+          <textarea id="cMsg" name="message" placeholder="Dites-m'en un peu plus — le contexte, la date si c'est un événement, ou simplement ce que le livre a remué."></textarea>
+          <span class="err">Écrivez quelques mots (au moins 10 caractères).</span>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Envoyer le message
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <span class="form-privacy">Réponse personnelle, sous quelques jours.</span>
+        </div>
+      </form>
+
+      <div class="form-success" id="contactSuccess">
+        <div class="ok"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg></div>
+        <h3>Message prêt à partir</h3>
+        <p id="successMsg">Merci — votre message a bien été pris en compte. Vous recevrez une réponse personnelle sous quelques jours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section panel-2" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:46px">
+      <span class="eyebrow center-eb">Questions fréquentes</span>
+      <h2 style="margin-top:14px">Tout ce qu'on nous demande</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Faut-il s'y connaître en IA pour lire ce livre ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Non, au contraire. Ce n'est pas un livre technique. Il ne parle pas de la machine, mais de ce qu'elle fait à notre façon de décider, de ressentir et de nous relier. Aucun prérequis, sinon l'envie de regarder en face.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">C'est un livre « pour » ou « contre » l'IA ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Ni l'un ni l'autre. L'IA n'y est ni sauveur ni prédateur. Le propos n'est pas de trancher, mais de rester lucide — et de refuser le faux choix entre l'émerveillement béat et la panique. L'auteur s'y présente « ni prophète de la Silicon Valley, ni déclinologue ».</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">De quoi parle-t-il, au fond ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>D'un déplacement que personne ne remarque : nous ne nous faisons pas remplacer, nous déléguons. Décision après décision, jugement après jugement, nous cédons à la machine ce qui nous rendait présents — sans jamais l'avoir décidé. Le livre suit ce fil, de la décision la plus intime jusqu'à la souveraineté des nations, et propose un chemin pour rester, et redevenir, pleinement humain.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">À qui s'adresse-t-il ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>À tout le monde — c'est voulu. Le livre touche autant la vie personnelle que professionnelle : le parent qui tend une tablette, le dirigeant qui n'ose plus décider, celui qui sent qu'il scrolle un peu trop. Si vous utilisez l'IA (ou vos proches le font), il vous concerne.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Faut-il le lire dans l'ordre ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>C'est préférable. Le livre est construit comme un parcours en trois mouvements — la lucidité, les menaces silencieuses, puis le chemin pour rester humain. Il y a une progression émotionnelle : un inconfort qui se change en élan. Mais chaque chapitre se tient aussi seul, si vous voulez piocher.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Quels formats sont disponibles, et à quel prix ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Trois formats : la version Kindle (7,99 €), le broché (18,90 €, ≈ 220 pages), et un exemplaire dédicacé sur demande directe (24,00 €). Le broché et le Kindle sont disponibles sur Amazon ; le dédicacé se commande via le formulaire de contact.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Comment obtenir un exemplaire dédicacé ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Écrivez via le formulaire ci-dessus en choisissant l'objet « exemplaire dédicacé ». Précisez le nom à qui l'adresser et l'éventuel mot que vous souhaitez. L'auteur vous répond directement pour les modalités.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Le quiz « miroir » enregistre-t-il mes réponses ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Non. Tout se passe dans votre navigateur, rien n'est envoyé ni stocké. C'est un miroir pour vous seul — pas un sondage qui vous mesure.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Proposez-vous des conférences ou des interventions ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Oui. Aurélien Mizeret intervient auprès de dirigeants, d'équipes et d'organisations sur les thèmes du livre — de la lucidité face à l'IA à la décision et au lien collectif. Passez par le formulaire de contact, objet « conférence ou intervention », en indiquant le contexte et la date envisagée.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Peut-on commander plusieurs exemplaires pour une équipe ou une école ?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Bien sûr. Pour une commande en volume (entreprise, établissement, événement), écrivez via le formulaire avec l'objet correspondant : on trouvera la formule la plus simple pour vous.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="#C99A4A" stroke-opacity=".45"/>
+            <circle cx="16" cy="16" r="8.5" fill="none" stroke="#C99A4A" stroke-opacity=".7"/>
+            <circle cx="16" cy="16" r="4" fill="#E4C081"/>
+          </svg>
+          Ce que l'IA fait de nous
+        </div>
+        <p class="foot-p">Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle. Un essai d'Aurélien Mizeret.</p>
+        <div class="social-row on-dark" aria-label="Réseaux sociaux">
+          <a href="https://www.linkedin.com/in/aur%C3%A9lien-mizeret/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.4h3.1V21H3.4V8.4zM9.3 8.4h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9.3V8.4z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.41-4.73a2.47 2.47 0 0 0-1.74-1.75C19.32 5.1 12 5.1 12 5.1s-7.32 0-8.85.42A2.47 2.47 0 0 0 1.41 7.27C1 8.8 1 12 1 12s0 3.2.41 4.73a2.47 2.47 0 0 0 1.74 1.75C4.68 18.9 12 18.9 12 18.9s7.32 0 8.85-.42a2.47 2.47 0 0 0 1.74-1.75C23 15.2 23 12 23 12zM9.7 15.15V8.85L15.2 12l-5.5 3.15z"/></svg>
+          </a>
+          <a href="https://www.eventbrite.fr/o/121541945462" target="_blank" rel="noopener" aria-label="Événements sur Eventbrite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 0 0 4v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-4V8z"/><path d="M13 6.5v11" stroke-dasharray="2 2.4"/></svg>
+          </a>
+          <a href="https://wa.me/33619958971" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.83-1.96-.92-.26-.1-.45-.14-.64.14-.19.28-.73.92-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.46-.48-.64-.48l-.54-.01c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.35s1.01 2.73 1.15 2.92c.14.19 1.98 3.03 4.8 4.25.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.66-.68 1.9-1.33.23-.65.23-1.21.16-1.33-.07-.11-.26-.18-.54-.32z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.28-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.5 0-2.98-.4-4.27-1.16l-.31-.18-3.16.83.84-3.08-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Le livre</h4>
+        <a href="#livre">Présentation</a>
+        <a href="#mouvements">À l'intérieur</a>
+        <a href="#quiz">Le miroir</a>
+        <a href="#echos">Premiers échos</a>
+        <a href="#commander">Commander</a>
+      </div>
+      <div class="foot-col">
+        <h4>L'auteur</h4>
+        <a href="https://aurelienmizeret.com/" target="_blank" rel="noopener">aurelienmizeret.com</a>
+        <a href="https://www.linkedin.com/in/aur%C3%A9lien-mizeret/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener">YouTube</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="#contact">Écrire à l'auteur</a>
+        <a href="https://wa.me/33619958971" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.eventbrite.fr/o/121541945462" target="_blank" rel="noopener">Événements</a>
+        <a href="#faq">Questions fréquentes</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Aurélien Mizeret. Tous droits réservés.</span>
+      <span>Mentions légales · Confidentialité</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Retour en haut">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  var onScroll = function(){
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+    toTop.classList.toggle('show', window.scrollY > 620);
+  };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      a.style.maxHeight = open ? a.scrollHeight + 'px' : null;
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  var nform = document.getElementById('newsForm');
+  var nnote = document.getElementById('newsNote');
+  nform.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('newsEmail').value.trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!ok){ nnote.textContent = "Vérifiez votre adresse email."; nnote.style.color = "#A16A22"; return; }
+    nnote.textContent = "Merci — le prologue arrive dans votre boîte."; nnote.style.color = "#255C82";
+    nform.reset();
+  });
+
+  /* ============ QUIZ / MIROIR ============ */
+  var QUESTIONS = [
+    { q:"Face à une décision qui compte, mon premier réflexe :",
+      opts:[
+        {t:"Je demande à l'IA de me dire quoi faire.", s:0},
+        {t:"Je m'en sers pour explorer, puis je tranche moi-même.", s:2},
+        {t:"Ça dépend des jours — parfois l'une, parfois l'autre.", s:1}
+      ]},
+    { q:"Quand une réponse me plaît, je me demande si elle est vraie :",
+      opts:[
+        {t:"Rarement, si elle sonne juste, elle me suffit.", s:0},
+        {t:"Presque toujours — je recoupe avant d'y croire.", s:2},
+        {t:"Parfois, quand l'enjeu me semble important.", s:1}
+      ]},
+    { q:"Rester sans réponse immédiate, dans une question ouverte :",
+      opts:[
+        {t:"M'est devenu difficile — je cherche vite à combler.", s:0},
+        {t:"Je sais encore y demeurer sans m'agiter.", s:2},
+        {t:"Un peu des deux, selon mon état.", s:1}
+      ]},
+    { q:"Un vrai moment avec mes proches, sans écran :",
+      opts:[
+        {t:"C'est devenu rare, honnêtement.", s:0},
+        {t:"C'est un rendez-vous que je protège.", s:2},
+        {t:"J'essaie, sans toujours y arriver.", s:1}
+      ]},
+    { q:"Ce que l'IA fait de ma façon de penser :",
+      opts:[
+        {t:"Je n'y avais pas vraiment réfléchi.", s:0},
+        {t:"J'y suis attentif, et je m'ajuste.", s:2},
+        {t:"Je commence tout juste à me poser la question.", s:1}
+      ]}
+  ];
+
+  var RESULTS = [
+    { min:8, eb:"Votre reflet", title:["Présent, et ", "lucide"],
+      body:"Vous tenez encore debout dans le courant : vous décidez, vous doutez, vous protégez vos vrais moments. Ce livre ne vous apprendra pas à résister — vous le faites déjà. Il vous donnera les mots de ce que vous sentez confusément, et de quoi tenir quand le courant forcira." },
+    { min:4, eb:"Votre reflet", title:["Entre ", "deux feux"],
+      body:"Lucide par instants, emporté à d'autres — comme presque tous. La machine vous rend d'immenses services, et parfois, sans bruit, elle décide un peu à votre place. Ce livre est fait pour cet entre-deux : nommer ce qui vous échappe, et choisir, geste après geste, de rester présent." },
+    { min:0, eb:"Votre reflet", title:["En pilote ", "automatique"],
+      body:"Sans le moindre jugement : vous déléguez beaucoup, et c'est humain — tout est conçu pour ça. Mais quelque chose de discret s'en va avec chaque raccourci. C'est exactement là que le livre commence : non pour vous culpabiliser, mais pour rallumer, doucement, le goût de décider par vous-même." }
+  ];
+
+  var game = document.getElementById('quizGame');
+  var result = document.getElementById('quizResult');
+  var qText = document.getElementById('qText');
+  var qOpts = document.getElementById('qOpts');
+  var qNow = document.getElementById('qNow');
+  var qDots = document.getElementById('qDots');
+  var qBack = document.getElementById('qBack');
+  var idx = 0;
+  var answers = [];
+
+  QUESTIONS.forEach(function(){
+    var d = document.createElement('span'); d.className = 'qdot'; qDots.appendChild(d);
+  });
+  var dots = qDots.querySelectorAll('.qdot');
+
+  function render(){
+    var Q = QUESTIONS[idx];
+    qText.textContent = Q.q;
+    qNow.textContent = (idx+1);
+    qOpts.innerHTML = '';
+    Q.opts.forEach(function(o, i){
+      var b = document.createElement('button');
+      b.className = 'qopt' + (answers[idx] === i ? ' chosen' : '');
+      b.type = 'button';
+      b.innerHTML = '<span class="bullet"></span><span>' + o.t + '</span>';
+      b.addEventListener('click', function(){ choose(i); });
+      qOpts.appendChild(b);
+    });
+    dots.forEach(function(d, i){
+      d.classList.toggle('active', i === idx);
+      d.classList.toggle('done', (i < idx) || (answers[i] != null && i !== idx));
+    });
+    qBack.disabled = (idx === 0);
+  }
+
+  function choose(i){
+    answers[idx] = i;
+    render();
+    setTimeout(function(){
+      if (idx < QUESTIONS.length - 1){ idx++; render(); }
+      else { finish(); }
+    }, 260);
+  }
+
+  qBack.addEventListener('click', function(){ if(idx>0){ idx--; render(); } });
+
+  function finish(){
+    var score = answers.reduce(function(a,i,n){ return a + QUESTIONS[n].opts[i].s; }, 0);
+    var r = RESULTS.find(function(x){ return score >= x.min; });
+    document.getElementById('qrEb').textContent = r.eb;
+    document.getElementById('qrTitle').innerHTML = r.title[0] + '<span class="em">' + r.title[1] + '</span>';
+    document.getElementById('qrBody').textContent = r.body;
+    game.style.display = 'none';
+    result.classList.add('show');
+    var pct = Math.round((score / 10) * 100);
+    setTimeout(function(){ document.getElementById('qrFill').style.width = Math.max(pct, 6) + '%'; }, 120);
+  }
+
+  document.getElementById('qRestart').addEventListener('click', function(){
+    idx = 0; answers = [];
+    result.classList.remove('show');
+    document.getElementById('qrFill').style.width = '0';
+    game.style.display = 'block';
+    render();
+  });
+
+  render();
+
+  /* ============ CONTACT ============ */
+  var cform = document.getElementById('contactForm');
+  var csuccess = document.getElementById('contactSuccess');
+  function setInvalid(id, bad){
+    document.getElementById(id).closest('.field').classList.toggle('invalid', bad);
+  }
+  cform.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cName').value.trim();
+    var email = document.getElementById('cEmail').value.trim();
+    var subject = document.getElementById('cSubject').value;
+    var msg = document.getElementById('cMsg').value.trim();
+    var okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    var bad = false;
+    if(!name){ setInvalid('cName', true); bad = true; } else setInvalid('cName', false);
+    if(!okEmail){ setInvalid('cEmail', true); bad = true; } else setInvalid('cEmail', false);
+    if(!subject){ setInvalid('cSubject', true); bad = true; } else setInvalid('cSubject', false);
+    if(msg.length < 10){ setInvalid('cMsg', true); bad = true; } else setInvalid('cMsg', false);
+    if(bad){ return; }
+
+    /* Envoi réel vers Netlify Forms (POST vers "/").
+       La soumission déclenche netlify/functions/submission-created.js,
+       qui envoie l'e-mail stylé au visiteur + la copie à amizeret@gmail.com. */
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(cform)).toString()
+    })
+    .then(function(){
+      document.getElementById('successMsg').textContent =
+        'Merci ' + (name.split(' ')[0] || '') + " — votre message a bien été envoyé. Une confirmation vient d'arriver dans votre boîte mail ; vous recevrez une réponse personnelle sous quelques jours.";
+      cform.style.display = 'none';
+      csuccess.classList.add('show');
+    })
+    .catch(function(){
+      document.getElementById('successMsg').textContent =
+        "Un souci est survenu pendant l'envoi. Réessayez dans un instant, ou écrivez-moi directement sur WhatsApp.";
+      cform.style.display = 'none';
+      csuccess.classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Configuration Netlify — dépose ce fichier à la racine du dépôt/dossier déployé.
+[build]
+  # Dossier publié : "." si index.html est à la racine.
+  publish = "."
+  # Dossier des fonctions (contient submission-created.js).
+  functions = "netlify/functions"
