@@ -17,7 +17,7 @@ const FROM = "Aurélien Mizeret <hello@aurelienmizeret.com>";
 // Chemin du PDF, relatif à la racine du site. L'URL absolue est reconstruite
 // à partir du domaine réel de la requête : fonctionne aussi bien sur
 // cequeliafaitdenous.com que sur une preview Netlify.
-const PDF_FILE = "/telechargements/extrait-livre-9f3c21.pdf";
+const PDF_FILE = "/telechargements/extrait-livre-9f3c21.pdf.pdf";
 const PDF_NAME = "Ce-que-l-IA-fait-de-nous-Prologue.pdf";
 
 const LINKS = {
