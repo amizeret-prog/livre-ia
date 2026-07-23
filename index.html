@@ -999,13 +999,33 @@ footer{background:var(--encre);color:rgba(246,243,233,.7);padding:72px 0 40px}
 
   var nform = document.getElementById('newsForm');
   var nnote = document.getElementById('newsNote');
+  var nbtn  = nform.querySelector('button');
   nform.addEventListener('submit', function(e){
     e.preventDefault();
     var email = document.getElementById('newsEmail').value.trim();
-    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!ok){ nnote.textContent = "Vérifiez votre adresse email."; nnote.style.color = "#A16A22"; return; }
-    nnote.textContent = "Merci — le prologue arrive dans votre boîte."; nnote.style.color = "#255C82";
-    nform.reset();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      nnote.textContent = "Vérifiez votre adresse email."; nnote.style.color = "#A16A22"; return;
+    }
+    var label = nbtn.textContent;
+    nbtn.disabled = true; nbtn.textContent = "Envoi…";
+    nnote.textContent = "Envoi en cours…"; nnote.style.color = "#67757F";
+
+    fetch('/api/extrait', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, 'bot-field': document.getElementById('newsHp').value })
+    })
+    .then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
+    .then(function(){
+      nnote.textContent = "C'est parti — le prologue vient d'arriver dans votre boîte (pensez aux indésirables).";
+      nnote.style.color = "#255C82";
+      nform.reset();
+    })
+    .catch(function(){
+      nnote.textContent = "L'envoi a échoué. Réessayez, ou écrivez-moi via le formulaire de contact.";
+      nnote.style.color = "#A16A22";
+    })
+    .then(function(){ nbtn.disabled = false; nbtn.textContent = label; });
   });
 
   /* ============ QUIZ / MIROIR ============ */
