@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qui décide à notre place ? IA, délégation et paralysie | Ce que l'IA fait de nous</title>
+<meta name="description" content="De la recommandation algorithmique à l'entreprise qui n'ose plus trancher : comment la décision se déplace hors de nous, et pourquoi ne pas décider est une décision.">
+<link rel="canonical" href="https://cequeliafaitdenous.com/decider-a-l-ere-de-l-ia">
+<meta name="author" content="Aurélien Mizeret">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ce que l'IA fait de nous">
+<meta property="og:title" content="Qui décide à notre place ? IA, délégation et paralysie | Ce que l'IA fait de nous">
+<meta property="og:description" content="De la recommandation algorithmique à l'entreprise qui n'ose plus trancher : comment la décision se déplace hors de nous, et pourquoi ne pas décider est une décision.">
+<meta property="og:url" content="https://cequeliafaitdenous.com/decider-a-l-ere-de-l-ia">
+<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Qui décide à notre place ? IA, délégation et paralysie | Ce que l'IA fait de nous">
+<meta name="twitter:description" content="De la recommandation algorithmique à l'entreprise qui n'ose plus trancher : comment la décision se déplace hors de nous, et pourquoi ne pas décider est une décision.">
+<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
+  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
+a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
+a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 24px}
+header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
+.brand span{color:var(--braise)}
+nav.top{font-size:.86rem; color:var(--gris)}
+nav.top a{border:0; color:var(--gris); margin-left:18px}
+nav.top a:hover{color:var(--bleu)}
+main{padding:56px 0 24px}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
+  font-weight:600; margin:0 0 18px
+}
+h1{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
+  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
+}
+.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
+h2{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
+  margin:52px 0 16px; color:var(--bleu-fonce)
+}
+h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
+p{margin:0 0 20px}
+blockquote{
+  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
+  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
+}
+.foyer{display:flex; justify-content:center; margin:46px 0}
+.foyer svg{display:block}
+.panel{
+  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
+  padding:26px 28px; margin:34px 0
+}
+.panel h2, .panel h3{margin-top:0}
+.panel ul{margin:0; padding-left:22px}
+.panel li{margin-bottom:10px}
+.panel li::marker{color:var(--or)}
+.recap{border-left:4px solid var(--or)}
+.sources{font-size:.93rem; color:var(--gris)}
+.sources li{margin-bottom:8px}
+.cta{
+  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
+}
+.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
+.cta p{color:#D6E2EA; margin-bottom:22px}
+.buttons{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid transparent; background:var(--braise); color:#fff
+}
+.btn:hover{background:var(--or); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
+.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
+.suite{margin:44px 0}
+.suite ul{list-style:none; padding:0; margin:0}
+.suite li{border-top:1px solid var(--trait); padding:16px 0}
+.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
+.suite li a:hover{color:var(--braise)}
+.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
+footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
+footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
+footer.site a{color:var(--bleu)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
+@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Qui décide à notre place ?",
+    "description": "De la recommandation algorithmique à l'entreprise qui n'ose plus trancher : comment la décision se déplace hors de nous, et pourquoi ne pas décider est une décision.",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cequeliafaitdenous.com/decider-a-l-ere-de-l-ia"
+    },
+    "url": "https://cequeliafaitdenous.com/decider-a-l-ere-de-l-ia",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ce que l'IA fait de nous",
+      "url": "https://cequeliafaitdenous.com"
+    },
+    "about": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "mentions": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "keywords": "IA prise de décision, délégation décisionnelle, asymétrie du blâme, voiture autonome responsabilité, paralysie décisionnelle entreprise"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ce que l'IA fait de nous",
+        "item": "https://cequeliafaitdenous.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Décider à l'ère de l'IA",
+        "item": "https://cequeliafaitdenous.com/decider-a-l-ere-de-l-ia"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Peut-on déléguer une décision à une intelligence artificielle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On peut lui déléguer la préparation d'une décision, l'analyse d'options et la détection d'angles morts. Lui déléguer l'arbitrage revient à transférer une responsabilité qui, juridiquement et moralement, reste la vôtre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi les entreprises européennes hésitent-elles autant sur l'IA ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deux causes se combinent : une incertitude réelle sur la responsabilité juridique, et une asymétrie interne qui sanctionne les erreurs d'action bien plus que les occasions manquées."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que l'asymétrie du blâme ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le déséquilibre entre une faute d'action, identifiable et sanctionnée, et une faute d'inaction, invisible et rarement imputée à quiconque. Elle explique une grande part de l'immobilisme organisationnel."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
+    <nav class="top" aria-label="Navigation principale">
+      <a href="/">Le livre</a>
+      <a href="/#extrait">Extrait gratuit</a>
+      <a href="https://aurelienmizeret.com">L'auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <article class="wrap">
+    <p class="eyebrow">Chapitres cinq et huit · La décision</p>
+    <h1>Qui décide à notre place ?</h1>
+    <p class="chapo">Personne ne vous a retiré le pouvoir de décider. On vous a seulement proposé, à chaque étape, une option déjà surlignée. C'est ainsi qu'une décision change de mains sans qu'aucune main ne se lève.</p>
+
+    <div class="panel">
+      <h3>Ce que vous allez comprendre</h3>
+      <ul>
+      <li>Comment une recommandation devient un choix sans jamais s'annoncer comme tel.</li>
+      <li>Ce qu'est l'asymétrie du blâme, et pourquoi elle paralyse les comités de direction.</li>
+      <li>Pourquoi la voiture autonome est le dilemme du tramway sorti de l'amphithéâtre.</li>
+      <li>Ce que coûte, en vies et en souveraineté, une décision indéfiniment reportée.</li>
+      </ul>
+    </div>
+
+
+    <h2>La décision ne se prend plus, elle se valide</h2>
+    <p>Le trajet, le film, le candidat retenu dans une pile de curriculum vitae, l'ordre des informations que vous lirez ce matin : dans chacun de ces cas, quelqu'un a réduit le champ avant vous. Vous conservez formellement le choix, sur un menu que vous n'avez pas composé.</p>
+    <p>Ce n'est pas un complot, c'est un modèle économique. Un système entraîné à maximiser l'engagement ou la conversion n'a pas besoin de vous contraindre : il lui suffit de rendre une option légèrement plus facile que les autres, un très grand nombre de fois.</p>
+
+    <h2>L'entreprise qui n'ose pas</h2>
+    <p>Dans les comités de direction, le phénomène prend une autre forme. Le projet est présenté, les bénéfices sont clairs, les risques sont réels, et la réunion se termine par une étude complémentaire. Six mois plus tard, la même réunion se tient.</p>
+    <p>La cause est rarement l'incompétence. Elle tient à une asymétrie très ancienne : une faute d'action est visible, attribuable, sanctionnée ; une faute d'inaction est invisible, diffuse, presque jamais punie. Face à cette asymétrie, l'attentisme devient rationnel pour chaque individu, et destructeur pour l'ensemble.</p>
+    <blockquote>Ne pas décider est une décision. Elle a simplement l'avantage de ne jamais figurer au procès-verbal.</blockquote>
+
+    <h2>Le dilemme du tramway est sorti de l'amphithéâtre</h2>
+    <p>L'exercice de philosophie morale sur le tramway est devenu un problème d'ingénierie et de droit. Environ 1,19 million de personnes meurent chaque année sur les routes du monde, selon l'Organisation mondiale de la santé. Ces morts sont statistiques, anonymes, absorbées par l'habitude.</p>
+    <p>Le premier décès impliquant un véhicule autonome, à Tempe en 2018, avait un nom : Elaine Herzberg. Une mort nommée pèse, dans un débat public, infiniment plus lourd qu'un million de morts anonymes. Toute la difficulté politique tient dans cet écart.</p>
+
+    <h2>Décider quand même</h2>
+    <p>Sortir de la paralysie ne consiste pas à foncer. Cela consiste à rendre visible le coût de l'inaction, à documenter ce que l'on renonce à faire autant que ce que l'on entreprend, et à répartir la responsabilité pour qu'aucune personne seule ne porte le risque d'oser. Une organisation qui protège ceux qui décident produit des décisions ; une organisation qui ne punit que l'action produit des rapports.</p>
+
+
+    <div class="foyer" aria-hidden="true">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
+<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
+<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
+<circle cx="66" cy="66" r="9" fill="#D9722C"/>
+<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
+</svg></div>
+
+    <div class="panel recap">
+      <h2>À retenir</h2>
+      <ul>
+      <li>Le pouvoir contemporain consiste moins à interdire qu'à composer le menu des options.</li>
+      <li>L'asymétrie du blâme rend l'inaction rationnelle pour l'individu et coûteuse pour le collectif.</li>
+      <li>Une mort visible pèse plus qu'un million de morts statistiques : c'est un fait politique à intégrer.</li>
+      <li>On sort de la paralysie en rendant le coût du renoncement aussi visible que celui de l'erreur.</li>
+      </ul>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <h3>Peut-on déléguer une décision à une intelligence artificielle ?</h3>
+    <p>On peut lui déléguer la préparation d'une décision, l'analyse d'options et la détection d'angles morts. Lui déléguer l'arbitrage revient à transférer une responsabilité qui, juridiquement et moralement, reste la vôtre.</p>
+    <h3>Pourquoi les entreprises européennes hésitent-elles autant sur l'IA ?</h3>
+    <p>Deux causes se combinent : une incertitude réelle sur la responsabilité juridique, et une asymétrie interne qui sanctionne les erreurs d'action bien plus que les occasions manquées.</p>
+    <h3>Qu'est-ce que l'asymétrie du blâme ?</h3>
+    <p>Le déséquilibre entre une faute d'action, identifiable et sanctionnée, et une faute d'inaction, invisible et rarement imputée à quiconque. Elle explique une grande part de l'immobilisme organisationnel.</p>
+
+    <div class="panel sources">
+      <h3>Sources et références citées</h3>
+      <ul>
+      <li>Organisation mondiale de la santé, rapport de situation sur la sécurité routière, environ 1,19 million de décès annuels.</li>
+      <li>Accident mortel de Tempe, Arizona, mars 2018, rapports du National Transportation Safety Board.</li>
+      <li>P. Foot, dilemme du tramway, 1967 ; J. J. Thomson, 1985.</li>
+      <li>A. Edmondson, travaux sur la sécurité psychologique, depuis 1999.</li>
+      </ul>
+      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Reprendre la main sur ses arbitrages</h2>
+      <p>Deux chapitres de l'essai sont consacrés à la décision, du choix individuel jusqu'au comité de direction paralysé. Les questions de gouvernance qui en découlent sont travaillées collectivement au sein d'Alliages.</p>
+      <div class="buttons">
+        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
+      </div>
+    </div>
+
+    <section class="suite">
+      <h2>Poursuivre la lecture</h2>
+      <ul>
+    <li><a href="/pouvoir-gouvernance-ia">Qui règle le thermostat ?</a><span>Trois laboratoires, trois visions du monde, et une Europe en demi-souveraineté.</span></li>
+    <li><a href="/redevenir-pleinement-humains">Un corps et une tribu</a><span>Ce que la machine n'aura jamais, et ce que la recherche en dit depuis quatre-vingts ans.</span></li>
+    <li><a href="/esprit-critique-intelligence-artificielle">L'IA fait-elle baisser notre esprit critique ?</a><span>Pourquoi la vraie question n'est pas le remplacement, mais le discernement.</span></li>
+      </ul>
+    </section>
+
+    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
+    <p>
+      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
+      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
+      <a href="https://alliages.work">alliages.work</a> ·
+      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
+      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

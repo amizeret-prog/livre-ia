@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA et solitude : la déshumanisation n'est pas où on la cherche | Ce que l'IA fait de nous</title>
+<meta name="description" content="Compagnons artificiels, épidémie de solitude, lien sans friction : pourquoi le risque de déshumanisation était déjà là avant l'IA, et ce qui permet d'y répondre.">
+<link rel="canonical" href="https://cequeliafaitdenous.com/ia-solitude-deshumanisation">
+<meta name="author" content="Aurélien Mizeret">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ce que l'IA fait de nous">
+<meta property="og:title" content="IA et solitude : la déshumanisation n'est pas où on la cherche | Ce que l'IA fait de nous">
+<meta property="og:description" content="Compagnons artificiels, épidémie de solitude, lien sans friction : pourquoi le risque de déshumanisation était déjà là avant l'IA, et ce qui permet d'y répondre.">
+<meta property="og:url" content="https://cequeliafaitdenous.com/ia-solitude-deshumanisation">
+<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IA et solitude : la déshumanisation n'est pas où on la cherche | Ce que l'IA fait de nous">
+<meta name="twitter:description" content="Compagnons artificiels, épidémie de solitude, lien sans friction : pourquoi le risque de déshumanisation était déjà là avant l'IA, et ce qui permet d'y répondre.">
+<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
+  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
+a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
+a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 24px}
+header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
+.brand span{color:var(--braise)}
+nav.top{font-size:.86rem; color:var(--gris)}
+nav.top a{border:0; color:var(--gris); margin-left:18px}
+nav.top a:hover{color:var(--bleu)}
+main{padding:56px 0 24px}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
+  font-weight:600; margin:0 0 18px
+}
+h1{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
+  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
+}
+.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
+h2{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
+  margin:52px 0 16px; color:var(--bleu-fonce)
+}
+h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
+p{margin:0 0 20px}
+blockquote{
+  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
+  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
+}
+.foyer{display:flex; justify-content:center; margin:46px 0}
+.foyer svg{display:block}
+.panel{
+  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
+  padding:26px 28px; margin:34px 0
+}
+.panel h2, .panel h3{margin-top:0}
+.panel ul{margin:0; padding-left:22px}
+.panel li{margin-bottom:10px}
+.panel li::marker{color:var(--or)}
+.recap{border-left:4px solid var(--or)}
+.sources{font-size:.93rem; color:var(--gris)}
+.sources li{margin-bottom:8px}
+.cta{
+  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
+}
+.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
+.cta p{color:#D6E2EA; margin-bottom:22px}
+.buttons{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid transparent; background:var(--braise); color:#fff
+}
+.btn:hover{background:var(--or); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
+.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
+.suite{margin:44px 0}
+.suite ul{list-style:none; padding:0; margin:0}
+.suite li{border-top:1px solid var(--trait); padding:16px 0}
+.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
+.suite li a:hover{color:var(--braise)}
+.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
+footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
+footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
+footer.site a{color:var(--bleu)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
+@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "L'IA, la solitude et la tentation du lien sans friction",
+    "description": "Compagnons artificiels, épidémie de solitude, lien sans friction : pourquoi le risque de déshumanisation était déjà là avant l'IA, et ce qui permet d'y répondre.",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cequeliafaitdenous.com/ia-solitude-deshumanisation"
+    },
+    "url": "https://cequeliafaitdenous.com/ia-solitude-deshumanisation",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ce que l'IA fait de nous",
+      "url": "https://cequeliafaitdenous.com"
+    },
+    "about": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "mentions": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "keywords": "IA solitude, compagnon IA adolescents, déshumanisation intelligence artificielle, lien social écrans, épidémie de solitude"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ce que l'IA fait de nous",
+        "item": "https://cequeliafaitdenous.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "IA, solitude et lien social",
+        "item": "https://cequeliafaitdenous.com/ia-solitude-deshumanisation"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Les compagnons IA sont-ils dangereux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le risque documenté est celui de la substitution : quand la conversation avec une machine remplace des liens humains au lieu de s'y ajouter. Pour les adolescents en particulier, la vigilance des adultes est nécessaire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La solitude a-t-elle vraiment augmenté à cause des écrans ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La corrélation est nette, la causalité reste débattue dans la littérature scientifique. Les tendances de fond, effondrement du temps passé entre amis et hausse de l'isolement déclaré, sont antérieures aux smartphones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Une cure de détox numérique est-elle efficace ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Elle produit un soulagement temporaire, rarement un changement durable, parce qu'elle retire quelque chose sans rien mettre à la place. Reconstruire des occasions de lien réel donne des résultats plus stables."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
+    <nav class="top" aria-label="Navigation principale">
+      <a href="/">Le livre</a>
+      <a href="/#extrait">Extrait gratuit</a>
+      <a href="https://aurelienmizeret.com">L'auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <article class="wrap">
+    <p class="eyebrow">Chapitre neuf · La grande peur</p>
+    <h1>L'IA, la solitude et la tentation du lien sans friction</h1>
+    <p class="chapo">Une table de restaurant, une famille, un gâteau d'anniversaire, quatre écrans allumés. Personne autour de cette table n'a choisi cette scène. C'est ce qui la rend inquiétante, et c'est aussi ce qui rend possible d'en sortir.</p>
+
+    <div class="panel">
+      <h3>Ce que vous allez comprendre</h3>
+      <ul>
+      <li>Pourquoi le téléphone n'était qu'une répétition générale.</li>
+      <li>L'état réel des données sur la solitude, et ce qu'elles coûtent en santé.</li>
+      <li>Ce que signifie qu'un tiers des adolescents confient à une machine ce qu'ils ne disent à personne.</li>
+      <li>Pourquoi la friction n'est pas un défaut du lien humain, mais sa preuve.</li>
+      </ul>
+    </div>
+
+
+    <h2>Le téléphone était la répétition générale</h2>
+    <p>Nous avons vécu quinze ans avec un objet capable de capter notre attention en présence de ceux que nous aimons. Il n'avait ni voix, ni mémoire de nos confidences, ni capacité à répondre exactement ce que nous avions besoin d'entendre. Si un sifflet de fer-blanc a déjà suffi à nous détourner des nôtres, il faut se demander sérieusement ce que fera une sirène.</p>
+
+    <h2>Ce que disent les chiffres</h2>
+    <p>Le constat sanitaire est documenté. Les méta-analyses menées sur des centaines d'études et plusieurs millions de personnes associent l'isolement social à une surmortalité de l'ordre de vingt-six à trente-deux pour cent. En 2023, l'autorité sanitaire américaine a publié un avis de quatre-vingt-une pages qualifiant la solitude d'épidémie, et l'Organisation mondiale de la santé a installé une commission sur le lien social. Le temps passé entre amis s'est effondré dans les enquêtes d'emploi du temps.</p>
+    <p>Une précision d'honnêteté : la comparaison très citée avec quinze cigarettes par jour est un raccourci médiatique commode. L'ordre de grandeur du risque, lui, est établi.</p>
+
+    <h2>Le premier confident d'une génération</h2>
+    <p>Une enquête publiée en juillet 2025 auprès d'un millier d'adolescents américains indique que près de trois quarts d'entre eux ont utilisé un compagnon artificiel, la moitié régulièrement, et qu'environ un tiers confient à une machine des sujets graves qu'ils ne confient pas à un humain.</p>
+    <p>Ce chiffre ne dit pas que ces adolescents sont perdus. Il dit qu'ils ont trouvé quelque chose qui écoute sans juger, sans fatiguer, sans se souvenir de travers. Il dit surtout ce que nous ne leur offrons plus.</p>
+    <blockquote>Une connexion sans friction n'est pas une meilleure connexion. C'est sa contrefaçon.</blockquote>
+
+    <h2>Contre la sirène, une autre musique</h2>
+    <p>Face au chant des sirènes, Ulysse choisit la privation : la cire et le mât. Cette stratégie tient le temps d'un passage, pas le temps d'une vie, et c'est pour cela que les cures de détox numériques échouent. Sur le même navire des Argonautes, Orphée fait autre chose : il oppose au chant une plus belle musique.</p>
+    <p>La réponse n'est donc pas la résistance, elle est la ré-humanisation. Non pas se priver du lisse, mais choisir la friction : l'autre résiste, contredit, déçoit, oblige à négocier. C'est exactement pour cela qu'il nous construit, et c'est exactement ce que la machine ne fera jamais.</p>
+
+
+    <div class="foyer" aria-hidden="true">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
+<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
+<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
+<circle cx="66" cy="66" r="9" fill="#D9722C"/>
+<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
+</svg></div>
+
+    <div class="panel recap">
+      <h2>À retenir</h2>
+      <ul>
+      <li>L'isolement est un facteur de risque sanitaire majeur, documenté bien avant l'arrivée des IA conversationnelles.</li>
+      <li>Le succès des compagnons artificiels mesure d'abord un manque de lien humain disponible.</li>
+      <li>La privation volontaire ne tient pas dans la durée : elle ne remplace rien.</li>
+      <li>Choisir la friction, c'est choisir ce qui fait tenir une relation réelle.</li>
+      </ul>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <h3>Les compagnons IA sont-ils dangereux ?</h3>
+    <p>Le risque documenté est celui de la substitution : quand la conversation avec une machine remplace des liens humains au lieu de s'y ajouter. Pour les adolescents en particulier, la vigilance des adultes est nécessaire.</p>
+    <h3>La solitude a-t-elle vraiment augmenté à cause des écrans ?</h3>
+    <p>La corrélation est nette, la causalité reste débattue dans la littérature scientifique. Les tendances de fond, effondrement du temps passé entre amis et hausse de l'isolement déclaré, sont antérieures aux smartphones.</p>
+    <h3>Une cure de détox numérique est-elle efficace ?</h3>
+    <p>Elle produit un soulagement temporaire, rarement un changement durable, parce qu'elle retire quelque chose sans rien mettre à la place. Reconstruire des occasions de lien réel donne des résultats plus stables.</p>
+
+    <div class="panel sources">
+      <h3>Sources et références citées</h3>
+      <ul>
+      <li>J. Holt-Lunstad et al., méta-analyses sur isolement social et mortalité, 2010 et 2015.</li>
+      <li>Avis du Surgeon General des États-Unis sur l'épidémie de solitude, 2 mai 2023.</li>
+      <li>Commission de l'Organisation mondiale de la santé sur le lien social, 2023.</li>
+      <li>Common Sense Media, enquête sur mille soixante adolescents, juillet 2025.</li>
+      <li>S. Turkle, <em>Alone Together</em>, 2011.</li>
+      <li>Homère, <em>Odyssée</em>, chant XII ; Apollonios de Rhodes, <em>Argonautiques</em>, chant IV.</li>
+      </ul>
+      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+    </div>
+
+    <div class="cta">
+      <h2>La peur la plus profonde du livre</h2>
+      <p>La déshumanisation ne viendra pas de robots hostiles. Elle viendra de tables où plus personne ne lève les yeux. C'est réversible, et cela commence par un seul convive.</p>
+      <div class="buttons">
+        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
+      </div>
+    </div>
+
+    <section class="suite">
+      <h2>Poursuivre la lecture</h2>
+      <ul>
+    <li><a href="/decider-a-l-ere-de-l-ia">Qui décide à notre place ?</a><span>Recommandation, délégation, paralysie : l'anatomie d'une décision qui nous échappe.</span></li>
+    <li><a href="/pouvoir-gouvernance-ia">Qui règle le thermostat ?</a><span>Trois laboratoires, trois visions du monde, et une Europe en demi-souveraineté.</span></li>
+    <li><a href="/redevenir-pleinement-humains">Un corps et une tribu</a><span>Ce que la machine n'aura jamais, et ce que la recherche en dit depuis quatre-vingts ans.</span></li>
+      </ul>
+    </section>
+
+    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
+    <p>
+      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
+      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
+      <a href="https://alliages.work">alliages.work</a> ·
+      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
+      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

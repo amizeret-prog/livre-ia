@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informer n'est pas transmettre : l'IA et la transmission | Ce que l'IA fait de nous</title>
+<meta name="description" content="Pourquoi la meilleure machine pédagogique de l'histoire ne transmettra jamais un savoir-être. Sur la distinction entre informer et transmettre, sources scientifiques à l'appui.">
+<link rel="canonical" href="https://cequeliafaitdenous.com/transmettre-a-l-ere-de-l-ia">
+<meta name="author" content="Aurélien Mizeret">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ce que l'IA fait de nous">
+<meta property="og:title" content="Informer n'est pas transmettre : l'IA et la transmission | Ce que l'IA fait de nous">
+<meta property="og:description" content="Pourquoi la meilleure machine pédagogique de l'histoire ne transmettra jamais un savoir-être. Sur la distinction entre informer et transmettre, sources scientifiques à l'appui.">
+<meta property="og:url" content="https://cequeliafaitdenous.com/transmettre-a-l-ere-de-l-ia">
+<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Informer n'est pas transmettre : l'IA et la transmission | Ce que l'IA fait de nous">
+<meta name="twitter:description" content="Pourquoi la meilleure machine pédagogique de l'histoire ne transmettra jamais un savoir-être. Sur la distinction entre informer et transmettre, sources scientifiques à l'appui.">
+<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
+  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
+a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
+a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 24px}
+header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
+.brand span{color:var(--braise)}
+nav.top{font-size:.86rem; color:var(--gris)}
+nav.top a{border:0; color:var(--gris); margin-left:18px}
+nav.top a:hover{color:var(--bleu)}
+main{padding:56px 0 24px}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
+  font-weight:600; margin:0 0 18px
+}
+h1{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
+  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
+}
+.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
+h2{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
+  margin:52px 0 16px; color:var(--bleu-fonce)
+}
+h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
+p{margin:0 0 20px}
+blockquote{
+  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
+  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
+}
+.foyer{display:flex; justify-content:center; margin:46px 0}
+.foyer svg{display:block}
+.panel{
+  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
+  padding:26px 28px; margin:34px 0
+}
+.panel h2, .panel h3{margin-top:0}
+.panel ul{margin:0; padding-left:22px}
+.panel li{margin-bottom:10px}
+.panel li::marker{color:var(--or)}
+.recap{border-left:4px solid var(--or)}
+.sources{font-size:.93rem; color:var(--gris)}
+.sources li{margin-bottom:8px}
+.cta{
+  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
+}
+.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
+.cta p{color:#D6E2EA; margin-bottom:22px}
+.buttons{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid transparent; background:var(--braise); color:#fff
+}
+.btn:hover{background:var(--or); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
+.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
+.suite{margin:44px 0}
+.suite ul{list-style:none; padding:0; margin:0}
+.suite li{border-top:1px solid var(--trait); padding:16px 0}
+.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
+.suite li a:hover{color:var(--braise)}
+.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
+footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
+footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
+footer.site a{color:var(--bleu)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
+@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Informer n'est pas transmettre",
+    "description": "Pourquoi la meilleure machine pédagogique de l'histoire ne transmettra jamais un savoir-être. Sur la distinction entre informer et transmettre, sources scientifiques à l'appui.",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cequeliafaitdenous.com/transmettre-a-l-ere-de-l-ia"
+    },
+    "url": "https://cequeliafaitdenous.com/transmettre-a-l-ere-de-l-ia",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ce que l'IA fait de nous",
+      "url": "https://cequeliafaitdenous.com"
+    },
+    "about": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "mentions": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "keywords": "transmission savoir IA, informer transmettre, IA éducation, savoir tacite Polanyi, pédagogie intelligence artificielle"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ce que l'IA fait de nous",
+        "item": "https://cequeliafaitdenous.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Transmettre à l'ère de l'IA",
+        "item": "https://cequeliafaitdenous.com/transmettre-a-l-ere-de-l-ia"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Une IA peut-elle enseigner aussi bien qu'un professeur ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour transmettre de l'information, elle est remarquable et parfois supérieure en disponibilité. Pour transmettre un savoir-être, un goût, une exigence ou du courage, elle ne dispose d'aucun des canaux nécessaires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que le savoir tacite ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La part d'un savoir qui ne peut pas être formulée : le tour de main, le sens du moment juste, l'intuition du praticien. Polanyi la résumait ainsi, nous savons plus que nous ne pouvons dire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il éloigner les enfants de ces outils ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'interdiction pure prépare mal à un monde où ces outils seront partout. La position tenable consiste à les introduire depuis la relation, accompagnés, plutôt qu'à les substituer à elle."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
+    <nav class="top" aria-label="Navigation principale">
+      <a href="/">Le livre</a>
+      <a href="/#extrait">Extrait gratuit</a>
+      <a href="https://aurelienmizeret.com">L'auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <article class="wrap">
+    <p class="eyebrow">Chapitre dix · Transmettre</p>
+    <h1>Informer n'est pas transmettre</h1>
+    <p class="chapo">Elle est patiente, disponible à trois heures du matin, jamais humiliante, capable d'expliquer dix fois la même chose sans un soupir. C'est le meilleur informateur que l'humanité ait produit. Et elle n'a jamais transmis quoi que ce soit à personne.</p>
+
+    <div class="panel">
+      <h3>Ce que vous allez comprendre</h3>
+      <ul>
+      <li>Ce qui sépare rigoureusement l'information de la transmission.</li>
+      <li>Pourquoi certains savoirs n'existent que dans un corps qui les a vécus.</li>
+      <li>Ce que la scène la plus célèbre de Matrix dit exactement du contraire de ce qu'on croit.</li>
+      <li>Comment transmettre concrètement, dans une vie ordinaire, sans renoncer aux outils.</li>
+      </ul>
+    </div>
+
+
+    <h2>Le steelman : reconnaissons ce qu'elle réussit</h2>
+    <p>Commençons par lui rendre justice. Un assistant conversationnel explique sans jamais faire sentir à personne qu'il pose une question stupide. Il s'adapte au niveau, reformule, reste disponible la nuit. Pour la transmission d'informations, c'est un progrès considérable, et il serait absurde de le nier.</p>
+    <p>La coupure se situe ailleurs. On est informé d'un savoir. On ne reçoit un savoir-faire, un savoir-être ou une émotion qu'incarnés, d'un être qui les a vécus et payés dans un corps.</p>
+
+    <h2>Ce qui ne se télécharge pas</h2>
+    <p>Le courage ne s'apprend pas dans une définition. Il se prend de quelqu'un qui a eu peur et qui y est allé quand même, devant vous. Le poids du chagrin, on le comprend le jour où l'on voit son père pleurer. Le geste juste, en cuisine ou à l'établi, se transmet par une main posée sur une main et une phrase impossible à écrire : tu sauras que c'est prêt quand ça fait ça.</p>
+    <p>C'est ce que le philosophe Michael Polanyi appelait le savoir tacite : nous savons plus de choses que nous ne pouvons en dire. Ce reste non verbalisable est exactement ce qu'une machine, qui n'opère que sur du dicible, ne peut pas prendre en charge.</p>
+    <blockquote>Elle peut décrire la flamme. Elle n'est pas en feu. Et ce qui ne brûle pas ne peut rien allumer.</blockquote>
+
+    <h2>Matrix dit l'inverse de ce qu'on retient</h2>
+    <p>« I know kung fu » est devenue l'image du fantasme contemporain : la compétence téléchargée en trois secondes. On oublie systématiquement la suite. Morpheus répond « montre-moi », et Neo perd. Le téléchargement lui a donné les gestes, pas la maîtrise. Ce qui le fait devenir, c'est la relation : un homme en face de lui, dans le dojo, qui le corrige, l'agace et l'oblige.</p>
+    <p>La machine peut charger les gestes. Elle ne peut pas être le maître.</p>
+
+    <h2>Alors, comment transmet-on ?</h2>
+    <p>Faire à côté, plutôt qu'expliquer à distance. Transmettre par ses failles, parce que le lisse n'enseigne rien et que l'imperfection est la prise à laquelle l'autre s'accroche. Offrir un temps non compté. Laisser l'autre se débattre au lieu de le sauver par la réponse, puisque c'est dans ce débat que la compétence se construit.</p>
+    <p>Enfin, garder l'outil à sa place : la machine peut entrer dans la transmission, jamais s'y substituer. Ne confiez pas votre enfant à la machine, tendez-lui la machine depuis votre main.</p>
+
+
+    <div class="foyer" aria-hidden="true">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
+<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
+<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
+<circle cx="66" cy="66" r="9" fill="#D9722C"/>
+<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
+</svg></div>
+
+    <div class="panel recap">
+      <h2>À retenir</h2>
+      <ul>
+      <li>Informer transfère un contenu, transmettre engage deux présences.</li>
+      <li>Le savoir tacite, non verbalisable, échappe par construction à un système qui traite du langage.</li>
+      <li>La transmission exige de la friction, du temps et de l'imperfection : trois choses que l'outil supprime.</li>
+      <li>L'enjeu n'est pas d'écarter la machine, mais de rester celui qui tient la main de l'autre.</li>
+      </ul>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <h3>Une IA peut-elle enseigner aussi bien qu'un professeur ?</h3>
+    <p>Pour transmettre de l'information, elle est remarquable et parfois supérieure en disponibilité. Pour transmettre un savoir-être, un goût, une exigence ou du courage, elle ne dispose d'aucun des canaux nécessaires.</p>
+    <h3>Qu'est-ce que le savoir tacite ?</h3>
+    <p>La part d'un savoir qui ne peut pas être formulée : le tour de main, le sens du moment juste, l'intuition du praticien. Polanyi la résumait ainsi, nous savons plus que nous ne pouvons dire.</p>
+    <h3>Faut-il éloigner les enfants de ces outils ?</h3>
+    <p>L'interdiction pure prépare mal à un monde où ces outils seront partout. La position tenable consiste à les introduire depuis la relation, accompagnés, plutôt qu'à les substituer à elle.</p>
+
+    <div class="panel sources">
+      <h3>Sources et références citées</h3>
+      <ul>
+      <li>M. Polanyi, <em>The Tacit Dimension</em>, 1966.</li>
+      <li>P. K. Kuhl et al., <em>PNAS</em>, 2003, apprentissage médié par la présence sociale.</li>
+      <li>H. Bastani et al., <em>PNAS</em>, 2025, effet du design de l'outil sur l'apprentissage.</li>
+      <li>Common Sense Media, enquête sur les compagnons IA chez les adolescents, juillet 2025.</li>
+      </ul>
+      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Le cœur battant du livre</h2>
+      <p>La transmission est ce que nous risquons de perdre en premier, et la chose la plus simple à sauver : elle ne demande ni loi, ni budget, ni technologie. Seulement une présence.</p>
+      <div class="buttons">
+        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
+      </div>
+    </div>
+
+    <section class="suite">
+      <h2>Poursuivre la lecture</h2>
+      <ul>
+    <li><a href="/ia-solitude-deshumanisation">L'IA, la solitude et le lien</a><span>Ce que révèle le succès des compagnons artificiels, et ce qu'on peut lui opposer.</span></li>
+    <li><a href="/decider-a-l-ere-de-l-ia">Qui décide à notre place ?</a><span>Recommandation, délégation, paralysie : l'anatomie d'une décision qui nous échappe.</span></li>
+    <li><a href="/pouvoir-gouvernance-ia">Qui règle le thermostat ?</a><span>Trois laboratoires, trois visions du monde, et une Europe en demi-souveraineté.</span></li>
+      </ul>
+    </section>
+
+    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
+    <p>
+      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
+      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
+      <a href="https://alliages.work">alliages.work</a> ·
+      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
+      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

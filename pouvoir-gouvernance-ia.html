@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pouvoir et gouvernance de l'IA : qui règle le thermostat ? | Ce que l'IA fait de nous</title>
+<meta name="description" content="Opacité, rareté, fragmentation : les trois visions du monde qui structurent les grands laboratoires d'IA, et ce que l'AI Act change réellement pour l'Europe.">
+<link rel="canonical" href="https://cequeliafaitdenous.com/pouvoir-gouvernance-ia">
+<meta name="author" content="Aurélien Mizeret">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ce que l'IA fait de nous">
+<meta property="og:title" content="Pouvoir et gouvernance de l'IA : qui règle le thermostat ? | Ce que l'IA fait de nous">
+<meta property="og:description" content="Opacité, rareté, fragmentation : les trois visions du monde qui structurent les grands laboratoires d'IA, et ce que l'AI Act change réellement pour l'Europe.">
+<meta property="og:url" content="https://cequeliafaitdenous.com/pouvoir-gouvernance-ia">
+<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pouvoir et gouvernance de l'IA : qui règle le thermostat ? | Ce que l'IA fait de nous">
+<meta name="twitter:description" content="Opacité, rareté, fragmentation : les trois visions du monde qui structurent les grands laboratoires d'IA, et ce que l'AI Act change réellement pour l'Europe.">
+<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
+  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
+a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
+a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 24px}
+header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
+.brand span{color:var(--braise)}
+nav.top{font-size:.86rem; color:var(--gris)}
+nav.top a{border:0; color:var(--gris); margin-left:18px}
+nav.top a:hover{color:var(--bleu)}
+main{padding:56px 0 24px}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
+  font-weight:600; margin:0 0 18px
+}
+h1{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
+  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
+}
+.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
+h2{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
+  margin:52px 0 16px; color:var(--bleu-fonce)
+}
+h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
+p{margin:0 0 20px}
+blockquote{
+  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
+  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
+}
+.foyer{display:flex; justify-content:center; margin:46px 0}
+.foyer svg{display:block}
+.panel{
+  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
+  padding:26px 28px; margin:34px 0
+}
+.panel h2, .panel h3{margin-top:0}
+.panel ul{margin:0; padding-left:22px}
+.panel li{margin-bottom:10px}
+.panel li::marker{color:var(--or)}
+.recap{border-left:4px solid var(--or)}
+.sources{font-size:.93rem; color:var(--gris)}
+.sources li{margin-bottom:8px}
+.cta{
+  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
+}
+.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
+.cta p{color:#D6E2EA; margin-bottom:22px}
+.buttons{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid transparent; background:var(--braise); color:#fff
+}
+.btn:hover{background:var(--or); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
+.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
+.suite{margin:44px 0}
+.suite ul{list-style:none; padding:0; margin:0}
+.suite li{border-top:1px solid var(--trait); padding:16px 0}
+.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
+.suite li a:hover{color:var(--braise)}
+.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
+footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
+footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
+footer.site a{color:var(--bleu)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
+@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Qui règle le thermostat ?",
+    "description": "Opacité, rareté, fragmentation : les trois visions du monde qui structurent les grands laboratoires d'IA, et ce que l'AI Act change réellement pour l'Europe.",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cequeliafaitdenous.com/pouvoir-gouvernance-ia"
+    },
+    "url": "https://cequeliafaitdenous.com/pouvoir-gouvernance-ia",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ce que l'IA fait de nous",
+      "url": "https://cequeliafaitdenous.com"
+    },
+    "about": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "mentions": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "keywords": "gouvernance IA, pouvoir laboratoires IA, AI Act Europe, souveraineté numérique, Anthropic OpenAI DeepMind visions"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ce que l'IA fait de nous",
+        "item": "https://cequeliafaitdenous.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pouvoir et gouvernance de l'IA",
+        "item": "https://cequeliafaitdenous.com/pouvoir-gouvernance-ia"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que l'AI Act européen ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le règlement européen sur l'intelligence artificielle, qui classe les systèmes selon leur niveau de risque et impose des obligations proportionnées, notamment de transparence et de contrôle humain pour les usages à haut risque."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'Europe est-elle définitivement distancée sur l'IA ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rien ne permet de l'affirmer. Elle dispose de compétences de recherche, d'un marché et d'une capacité normative réelle. Sa dépendance porte principalement sur les composants et la puissance de calcul."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi parler de réglages par défaut plutôt que de contrôle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parce que l'influence de ces systèmes s'exerce rarement par interdiction. Elle passe par ce qui est proposé en premier, formulé par défaut, rendu plus facile : un thermostat plutôt qu'un poing."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
+    <nav class="top" aria-label="Navigation principale">
+      <a href="/">Le livre</a>
+      <a href="/#extrait">Extrait gratuit</a>
+      <a href="https://aurelienmizeret.com">L'auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <article class="wrap">
+    <p class="eyebrow">Chapitre huit · Le pouvoir</p>
+    <h1>Qui règle le thermostat ?</h1>
+    <p class="chapo">Le vrai pouvoir, à l'ère des systèmes qui médiatisent notre rapport au réel, ne consiste plus à donner des ordres. Il consiste à définir les réglages par défaut d'une civilisation. C'est le thermostat, pas le poing.</p>
+
+    <div class="panel">
+      <h3>Ce que vous allez comprendre</h3>
+      <ul>
+      <li>Pourquoi la bataille a quitté le terrain de l'attention pour celui de l'infrastructure.</li>
+      <li>Les trois visions du monde qui structurent les grands laboratoires, et ce qu'elles impliquent.</li>
+      <li>Ce que l'AI Act protège réellement, et ce qu'il ne résout pas.</li>
+      <li>En quoi consiste la demi-souveraineté européenne, sans caricature ni fatalisme.</li>
+      </ul>
+    </div>
+
+
+    <h2>De la guerre de l'attention à l'infrastructure du réel</h2>
+    <p>En 2017, le dirigeant de Netflix expliquait publiquement que son concurrent était le sommeil. Un an plus tôt, le fondateur de Spotify décrivait l'ambition de mettre en musique chaque moment d'une vie. La conquête portait alors sur nos limites biologiques : le sommeil, le silence, les temps morts.</p>
+    <p>Cette bataille est derrière nous. Les grands laboratoires ne se disputent plus votre temps d'écran, ils construisent la couche par laquelle vous traiterez l'information, rédigerez, chercherez, déciderez. Ce n'est plus un service, c'est une infrastructure.</p>
+
+    <h2>Trois laboratoires, trois adversaires désignés</h2>
+    <p>Chaque acteur majeur combat un ennemi différent, et cet ennemi révèle sa vision du monde. Le premier considère que le danger principal est l'<strong>opacité</strong> : des systèmes dont personne ne sait vraiment ce qu'ils font, d'où un effort concentré sur l'interprétabilité et l'encadrement du comportement des modèles. Le deuxième combat la <strong>rareté</strong> : rareté de l'intelligence disponible, de l'énergie, de la puissance de calcul, avec la promesse d'une abondance cognitive comparable à une utilité publique. Le troisième combat la <strong>fragmentation</strong> : l'information dispersée en silos, à réunifier dans des systèmes capables de traiter tous les formats, dans le prolongement d'une mission d'organisation du savoir mondial.</p>
+    <blockquote>Aucune de ces trois visions n'est absurde. Aucune n'a été soumise au vote.</blockquote>
+
+    <h2>Un outil que tout le monde utilise et que presque personne ne peut fabriquer</h2>
+    <p>C'est la situation inédite. Les semi-conducteurs de pointe, les centres de calcul et les laboratoires capables d'entraîner des modèles de frontière sont concentrés dans un très petit nombre de mains, réparties pour l'essentiel entre les États-Unis et la Chine. Dépendre d'une infrastructure que l'on ne peut ni auditer ni produire est une question de souveraineté avant d'être une question technique.</p>
+
+    <h2>Le paradoxe européen, honnêtement posé</h2>
+    <p>L'Europe a produit le cadre réglementaire le plus abouti au monde. L'AI Act pose des exigences réelles sur les usages à haut risque, la transparence et les droits des personnes : ce n'est pas rien, et l'effet d'entraînement normatif de Bruxelles est documenté depuis le règlement sur les données personnelles.</p>
+    <p>Le revers mérite d'être nommé avec la même franchise. Réguler une infrastructure que l'on n'héberge pas et que l'on ne fabrique pas revient à une demi-souveraineté : on écrit les règles d'un terrain qui appartient à d'autres. Et l'incertitude juridique, quand elle se prolonge, produit à l'échelle d'un continent le même effet qu'en comité de direction : la prudence devient de l'attentisme.</p>
+    <p>Le débat n'est pas tranché, et c'est précisément pour cela qu'il mérite d'être tenu en dehors des cercles d'initiés.</p>
+
+
+    <div class="foyer" aria-hidden="true">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
+<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
+<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
+<circle cx="66" cy="66" r="9" fill="#D9722C"/>
+<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
+</svg></div>
+
+    <div class="panel recap">
+      <h2>À retenir</h2>
+      <ul>
+      <li>La compétition ne porte plus sur l'attention, elle porte sur l'infrastructure du traitement du réel.</li>
+      <li>Trois visions concurrentes structurent le champ : lutte contre l'opacité, contre la rareté, contre la fragmentation.</li>
+      <li>La concentration industrielle rend la question de la souveraineté indissociable de la question technique.</li>
+      <li>L'AI Act protège réellement, et ne compense pas l'absence d'une infrastructure européenne.</li>
+      </ul>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <h3>Qu'est-ce que l'AI Act européen ?</h3>
+    <p>Le règlement européen sur l'intelligence artificielle, qui classe les systèmes selon leur niveau de risque et impose des obligations proportionnées, notamment de transparence et de contrôle humain pour les usages à haut risque.</p>
+    <h3>L'Europe est-elle définitivement distancée sur l'IA ?</h3>
+    <p>Rien ne permet de l'affirmer. Elle dispose de compétences de recherche, d'un marché et d'une capacité normative réelle. Sa dépendance porte principalement sur les composants et la puissance de calcul.</p>
+    <h3>Pourquoi parler de réglages par défaut plutôt que de contrôle ?</h3>
+    <p>Parce que l'influence de ces systèmes s'exerce rarement par interdiction. Elle passe par ce qui est proposé en premier, formulé par défaut, rendu plus facile : un thermostat plutôt qu'un poing.</p>
+
+    <div class="panel sources">
+      <h3>Sources et références citées</h3>
+      <ul>
+      <li>Déclarations publiques de Reed Hastings sur la concurrence du sommeil, 2017.</li>
+      <li>Positions de Daniel Ek sur l'accompagnement musical du quotidien, 2016, reprises dans <em>Mood Machine</em> de L. Pelly.</li>
+      <li>Règlement européen sur l'intelligence artificielle, dit AI Act.</li>
+      <li>A. Bradford, <em>The Brussels Effect</em>, 2020.</li>
+      </ul>
+      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Un débat trop important pour rester entre initiés</h2>
+      <p>Ces questions sont travaillées collectivement au sein d'Alliages, do-tank indépendant et non commercial réunissant DRH, DSI, dirigeants, chercheurs et acteurs institutionnels autour de la gouvernance de l'IA.</p>
+      <div class="buttons">
+        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
+      </div>
+    </div>
+
+    <section class="suite">
+      <h2>Poursuivre la lecture</h2>
+      <ul>
+    <li><a href="/redevenir-pleinement-humains">Un corps et une tribu</a><span>Ce que la machine n'aura jamais, et ce que la recherche en dit depuis quatre-vingts ans.</span></li>
+    <li><a href="/esprit-critique-intelligence-artificielle">L'IA fait-elle baisser notre esprit critique ?</a><span>Pourquoi la vraie question n'est pas le remplacement, mais le discernement.</span></li>
+    <li><a href="/dette-cognitive-ia-etudes">Dette cognitive : ce que disent les études</a><span>MIT, PNAS, Harvard : ce que la recherche mesure vraiment sur l'usage des IA génératives.</span></li>
+      </ul>
+    </section>
+
+    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
+    <p>
+      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
+      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
+      <a href="https://alliages.work">alliages.work</a> ·
+      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
+      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

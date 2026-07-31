@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'IA fait-elle baisser notre esprit critique ? | Ce que l'IA fait de nous</title>
+<meta name="description" content="L'intelligence artificielle n'affaiblit pas votre intelligence, elle rend facultatif l'effort de penser. Analyse tirée de l'essai « Ce que l'IA fait de nous » d'Aurélien Mizeret.">
+<link rel="canonical" href="https://cequeliafaitdenous.com/esprit-critique-intelligence-artificielle">
+<meta name="author" content="Aurélien Mizeret">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ce que l'IA fait de nous">
+<meta property="og:title" content="L'IA fait-elle baisser notre esprit critique ? | Ce que l'IA fait de nous">
+<meta property="og:description" content="L'intelligence artificielle n'affaiblit pas votre intelligence, elle rend facultatif l'effort de penser. Analyse tirée de l'essai « Ce que l'IA fait de nous » d'Aurélien Mizeret.">
+<meta property="og:url" content="https://cequeliafaitdenous.com/esprit-critique-intelligence-artificielle">
+<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="L'IA fait-elle baisser notre esprit critique ? | Ce que l'IA fait de nous">
+<meta name="twitter:description" content="L'intelligence artificielle n'affaiblit pas votre intelligence, elle rend facultatif l'effort de penser. Analyse tirée de l'essai « Ce que l'IA fait de nous » d'Aurélien Mizeret.">
+<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
+  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
+a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
+a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
+.wrap{max-width:720px; margin:0 auto; padding:0 24px}
+header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
+header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
+.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
+.brand span{color:var(--braise)}
+nav.top{font-size:.86rem; color:var(--gris)}
+nav.top a{border:0; color:var(--gris); margin-left:18px}
+nav.top a:hover{color:var(--bleu)}
+main{padding:56px 0 24px}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
+  font-weight:600; margin:0 0 18px
+}
+h1{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
+  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
+}
+.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
+h2{
+  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
+  margin:52px 0 16px; color:var(--bleu-fonce)
+}
+h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
+p{margin:0 0 20px}
+blockquote{
+  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
+  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
+}
+.foyer{display:flex; justify-content:center; margin:46px 0}
+.foyer svg{display:block}
+.panel{
+  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
+  padding:26px 28px; margin:34px 0
+}
+.panel h2, .panel h3{margin-top:0}
+.panel ul{margin:0; padding-left:22px}
+.panel li{margin-bottom:10px}
+.panel li::marker{color:var(--or)}
+.recap{border-left:4px solid var(--or)}
+.sources{font-size:.93rem; color:var(--gris)}
+.sources li{margin-bottom:8px}
+.cta{
+  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
+}
+.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
+.cta p{color:#D6E2EA; margin-bottom:22px}
+.buttons{display:flex; flex-wrap:wrap; gap:12px}
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
+  border:1px solid transparent; background:var(--braise); color:#fff
+}
+.btn:hover{background:var(--or); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
+.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
+.suite{margin:44px 0}
+.suite ul{list-style:none; padding:0; margin:0}
+.suite li{border-top:1px solid var(--trait); padding:16px 0}
+.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
+.suite li a:hover{color:var(--braise)}
+.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
+footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
+footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
+footer.site a{color:var(--bleu)}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
+@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "L'IA fait-elle baisser notre esprit critique ?",
+    "description": "L'intelligence artificielle n'affaiblit pas votre intelligence, elle rend facultatif l'effort de penser. Analyse tirée de l'essai « Ce que l'IA fait de nous » d'Aurélien Mizeret.",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aurélien Mizeret",
+      "url": "https://aurelienmizeret.com",
+      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "sameAs": [
+        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://aurelienmizeret.com",
+        "https://alliages.work"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cequeliafaitdenous.com/esprit-critique-intelligence-artificielle"
+    },
+    "url": "https://cequeliafaitdenous.com/esprit-critique-intelligence-artificielle",
+    "datePublished": "2026-08-01",
+    "dateModified": "2026-08-01",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ce que l'IA fait de nous",
+      "url": "https://cequeliafaitdenous.com"
+    },
+    "about": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "mentions": {
+      "@type": "Book",
+      "name": "Ce que l'IA fait de nous",
+      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "author": {
+        "@type": "Person",
+        "name": "Aurélien Mizeret",
+        "url": "https://aurelienmizeret.com",
+        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "sameAs": [
+          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+          "https://aurelienmizeret.com",
+          "https://alliages.work"
+        ]
+      },
+      "url": "https://cequeliafaitdenous.com",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "sameAs": [
+        "https://www.amazon.fr/dp/B0HBZ4JY2M",
+        "https://www.amazon.fr/dp/B0HBQHBDFP"
+      ]
+    },
+    "keywords": "esprit critique intelligence artificielle, IA discernement, ChatGPT esprit critique, ce que l'IA fait de nous, Aurélien Mizeret"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ce que l'IA fait de nous",
+        "item": "https://cequeliafaitdenous.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Esprit critique et IA",
+        "item": "https://cequeliafaitdenous.com/esprit-critique-intelligence-artificielle"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'intelligence artificielle rend-elle vraiment moins intelligent ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Elle ne diminue pas les capacités, elle rend leur exercice facultatif. Une faculté qui n'est plus sollicitée s'affaiblit : le risque porte sur l'entraînement du jugement, pas sur l'intelligence elle-même."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il arrêter d'utiliser ces outils pour préserver son esprit critique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. L'abstinence ne tient pas dans une vie professionnelle réelle et prive des bénéfices. Ce qui protège le discernement, c'est la posture d'usage : formuler son avis avant de consulter, demander la contradiction, vérifier les sources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment savoir si mon jugement s'érode ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un test simple : êtes-vous capable de défendre, sans l'outil et devant un contradicteur, la conclusion que vous venez d'adopter ? Si la réponse est non, la conclusion n'est pas encore la vôtre."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
+    <nav class="top" aria-label="Navigation principale">
+      <a href="/">Le livre</a>
+      <a href="/#extrait">Extrait gratuit</a>
+      <a href="https://aurelienmizeret.com">L'auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+  <article class="wrap">
+    <p class="eyebrow">Chapitre deux · Comme des poules avec un couteau</p>
+    <h1>L'IA fait-elle baisser notre esprit critique ?</h1>
+    <p class="chapo">La question qui revient partout est « allons-nous être remplacés ? ». C'est la mauvaise question. Tant qu'on la pose, on ne voit pas ce qui est déjà en train de se passer : un outil d'une puissance inédite est arrivé dans des mains qui n'ont reçu aucun mode d'emploi.</p>
+
+    <div class="panel">
+      <h3>Ce que vous allez comprendre</h3>
+      <ul>
+      <li>Pourquoi la peur du remplacement empêche de voir le vrai risque.</li>
+      <li>Ce que signifie l'image des « poules avec un couteau », et pourquoi elle n'a rien de méprisant.</li>
+      <li>La différence entre déléguer une tâche et déléguer un jugement.</li>
+      <li>Trois signaux concrets qui indiquent que votre discernement s'érode.</li>
+      </ul>
+    </div>
+
+
+    <h2>La mauvaise question, posée par tout le monde</h2>
+    <p>« Va-t-on être remplacés ? » « À quoi allons-nous servir ? » Ces questions reviennent dans les dîners, les comités de direction, les salles de formation. Elles semblent lucides. Elles sont surtout confortables, parce qu'elles placent le problème dans un futur hypothétique et chez quelqu'un d'autre : les ingénieurs, les États, les géants de la technologie.</p>
+    <p>Sans les bonnes questions, on n'obtient jamais les bonnes réponses. La question utile n'est pas de savoir si la machine va prendre notre place. Elle est de savoir ce que nous devenons en l'utilisant tous les jours, dix fois par jour, sans jamais nous demander ce que cet usage nous fait.</p>
+
+    <h2>Des poules avec un couteau</h2>
+    <p>L'image n'est pas une moquerie, elle est une description. Un couteau est un objet remarquable : il coupe le pain, il sauve une vie entre les mains d'un chirurgien, il blesse entre des mains inexpertes. Sa valeur ne réside pas dans la lame, elle réside dans la main et dans l'intention.</p>
+    <p>Nous venons de recevoir collectivement l'outil cognitif le plus puissant jamais mis à disposition du grand public, sans formation, sans culture d'usage, sans repères. La conséquence n'est pas dramatique, elle est banale : chacun s'en sert à hauteur de ce qu'il comprend. Or l'écart entre ceux qui comprennent et ceux qui subissent se creuse à toute vitesse.</p>
+    <blockquote>Le problème n'est pas l'intelligence artificielle. Le problème est ce que nous acceptons de ne plus faire nous-mêmes.</blockquote>
+
+    <h2>Déléguer une tâche, déléguer un jugement</h2>
+    <p>Déléguer une tâche est un progrès ancien et souhaitable. La calculatrice n'a pas détruit les mathématiciens, le traitement de texte n'a pas tué les écrivains. La rupture apparaît quand la délégation ne porte plus sur l'exécution mais sur l'arbitrage : quand la machine ne produit plus un brouillon que l'on corrige, mais une conclusion que l'on adopte.</p>
+    <p>Ce basculement est presque invisible, parce qu'il ne s'accompagne d'aucune sensation de perte. La réponse arrive vite, elle est bien écrite, elle est plausible. Rien ne signale qu'on vient de sauter l'étape où l'on pense.</p>
+
+    <h3>Trois signaux d'alerte, très concrets</h3>
+    <p>Vous copiez une réponse sans être capable d'en défendre le raisonnement devant un contradicteur. Vous vous surprenez à formuler votre problème pour que la machine y réponde, plutôt qu'à le formuler pour le comprendre. Vous avez cessé de vérifier, non par confiance raisonnée, mais par fatigue.</p>
+
+    <h2>Ce que l'on peut faire, dès aujourd'hui</h2>
+    <p>La solution n'est ni le rejet, ni la fusion. Elle tient en une discipline simple : arriver avec une pensée à amplifier, plutôt que venir chercher une pensée toute faite. Formuler d'abord son propre avis, même maladroit, puis le confronter. Demander à l'outil ce qui affaiblit votre thèse plutôt que ce qui la confirme. Garder la friction, parce que c'est exactement là que se fabrique le jugement.</p>
+
+
+    <div class="foyer" aria-hidden="true">
+<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
+<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
+<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
+<circle cx="66" cy="66" r="9" fill="#D9722C"/>
+<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
+</svg></div>
+
+    <div class="panel recap">
+      <h2>À retenir</h2>
+      <ul>
+      <li>La peur du remplacement masque le risque réel : l'érosion silencieuse du jugement.</li>
+      <li>L'outil n'est ni bon ni mauvais, tout se joue dans la main qui le tient et dans l'intention.</li>
+      <li>La ligne à ne pas franchir sépare la délégation d'une tâche de la délégation d'un arbitrage.</li>
+      <li>La règle pratique : venir avec une pensée à amplifier, jamais en chercher une toute faite.</li>
+      </ul>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <h3>L'intelligence artificielle rend-elle vraiment moins intelligent ?</h3>
+    <p>Elle ne diminue pas les capacités, elle rend leur exercice facultatif. Une faculté qui n'est plus sollicitée s'affaiblit : le risque porte sur l'entraînement du jugement, pas sur l'intelligence elle-même.</p>
+    <h3>Faut-il arrêter d'utiliser ces outils pour préserver son esprit critique ?</h3>
+    <p>Non. L'abstinence ne tient pas dans une vie professionnelle réelle et prive des bénéfices. Ce qui protège le discernement, c'est la posture d'usage : formuler son avis avant de consulter, demander la contradiction, vérifier les sources.</p>
+    <h3>Comment savoir si mon jugement s'érode ?</h3>
+    <p>Un test simple : êtes-vous capable de défendre, sans l'outil et devant un contradicteur, la conclusion que vous venez d'adopter ? Si la réponse est non, la conclusion n'est pas encore la vôtre.</p>
+
+    <div class="panel sources">
+      <h3>Sources et références citées</h3>
+      <ul>
+      <li>Hannah Arendt, <em>La crise de l'éducation</em>, 1954.</li>
+      <li>Classement des usages réels des assistants conversationnels, travaux relayés par la <em>Harvard Business Review</em>, 2024 et 2025.</li>
+      <li>Microsoft, incident Tay, 2016.</li>
+      </ul>
+      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Reposer les bonnes questions</h2>
+      <p>Ce chapitre ouvre un essai de 220 pages consacré aux questions que l'on ne se pose pas encore sur l'intelligence artificielle. Le prologue et le premier chapitre sont offerts.</p>
+      <div class="buttons">
+        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
+        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
+      </div>
+    </div>
+
+    <section class="suite">
+      <h2>Poursuivre la lecture</h2>
+      <ul>
+    <li><a href="/dette-cognitive-ia-etudes">Dette cognitive : ce que disent les études</a><span>MIT, PNAS, Harvard : ce que la recherche mesure vraiment sur l'usage des IA génératives.</span></li>
+    <li><a href="/fracture-numerique-usage-ia">La fracture n'est pas d'accès, elle est d'usage</a><span>Pourquoi le même outil, disponible pour tous, creuse les écarts au lieu de les combler.</span></li>
+    <li><a href="/transmettre-a-l-ere-de-l-ia">Informer n'est pas transmettre</a><span>La machine est le plus grand informateur de l'histoire, et n'a jamais rien transmis.</span></li>
+      </ul>
+    </section>
+
+    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
+    <p>
+      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
+      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
+      <a href="https://alliages.work">alliages.work</a> ·
+      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
+      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
