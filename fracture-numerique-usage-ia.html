@@ -1,110 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fracture numérique et IA : le problème n'est plus l'accès | Ce que l'IA fait de nous</title>
 <meta name="description" content="Tout le monde a accès aux mêmes IA, et pourtant l'écart se creuse. Comprendre la fracture d'usage, l'effet Matthieu et le risque d'uniformisation. Extrait analytique de l'essai d'Aurélien Mizeret.">
-<link rel="canonical" href="https://cequeliafaitdenous.com/fracture-numerique-usage-ia">
 <meta name="author" content="Aurélien Mizeret">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://cequeliafaitdenous.com/fracture-numerique-usage-ia">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Ce que l'IA fait de nous">
 <meta property="og:title" content="Fracture numérique et IA : le problème n'est plus l'accès | Ce que l'IA fait de nous">
 <meta property="og:description" content="Tout le monde a accès aux mêmes IA, et pourtant l'écart se creuse. Comprendre la fracture d'usage, l'effet Matthieu et le risque d'uniformisation. Extrait analytique de l'essai d'Aurélien Mizeret.">
 <meta property="og:url" content="https://cequeliafaitdenous.com/fracture-numerique-usage-ia">
-<meta property="og:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta property="og:image" content="https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fracture numérique et IA : le problème n'est plus l'accès | Ce que l'IA fait de nous">
 <meta name="twitter:description" content="Tout le monde a accès aux mêmes IA, et pourtant l'écart se creuse. Comprendre la fracture d'usage, l'effet Matthieu et le risque d'uniformisation. Extrait analytique de l'essai d'Aurélien Mizeret.">
-<meta name="twitter:image" content="https://cequeliafaitdenous.com/og-image.jpg">
+<meta name="twitter:image" content="https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg">
+<meta name="theme-color" content="#F4F2EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23255C82' stroke-opacity='.4'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23255C82' stroke-opacity='.7'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23C99A4A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ivoire:#FBF7EF; --ivoire-2:#F4EDE0; --bleu:#255C82; --bleu-fonce:#123449;
-  --or:#C08A2E; --braise:#D9722C; --encre:#1C2A33; --gris:#5C6B75; --trait:#E2D8C6;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; background:var(--ivoire); color:var(--encre);
-  font-family:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased;
-}
-a{color:var(--bleu); text-decoration:none; border-bottom:1px solid rgba(37,92,130,.28)}
-a:hover{border-bottom-color:var(--braise); color:var(--bleu-fonce)}
-a:focus-visible{outline:2px solid var(--braise); outline-offset:3px; border-radius:2px}
-.wrap{max-width:720px; margin:0 auto; padding:0 24px}
-header.site{border-bottom:1px solid var(--trait); background:var(--ivoire-2)}
-header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; flex-wrap:wrap}
-.brand{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; letter-spacing:.02em; border:0; color:var(--bleu-fonce); font-weight:600}
-.brand span{color:var(--braise)}
-nav.top{font-size:.86rem; color:var(--gris)}
-nav.top a{border:0; color:var(--gris); margin-left:18px}
-nav.top a:hover{color:var(--bleu)}
-main{padding:56px 0 24px}
-.eyebrow{
-  font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--or);
-  font-weight:600; margin:0 0 18px
-}
-h1{
-  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:clamp(2rem,5.2vw,2.9rem);
-  line-height:1.16; letter-spacing:-.015em; margin:0 0 22px; color:var(--bleu-fonce)
-}
-.chapo{font-size:1.18rem; line-height:1.66; color:#33454F; margin:0 0 34px}
-h2{
-  font-family:'Newsreader',Georgia,serif; font-weight:500; font-size:1.62rem; line-height:1.28;
-  margin:52px 0 16px; color:var(--bleu-fonce)
-}
-h3{font-family:'Figtree',sans-serif; font-size:1.06rem; font-weight:700; margin:32px 0 10px; color:var(--bleu)}
-p{margin:0 0 20px}
-blockquote{
-  margin:34px 0; padding:4px 0 4px 22px; border-left:3px solid var(--braise);
-  font-family:'Newsreader',Georgia,serif; font-size:1.24rem; line-height:1.5; color:var(--bleu-fonce); font-style:italic
-}
-.foyer{display:flex; justify-content:center; margin:46px 0}
-.foyer svg{display:block}
-.panel{
-  background:var(--ivoire-2); border:1px solid var(--trait); border-radius:14px;
-  padding:26px 28px; margin:34px 0
-}
-.panel h2, .panel h3{margin-top:0}
-.panel ul{margin:0; padding-left:22px}
-.panel li{margin-bottom:10px}
-.panel li::marker{color:var(--or)}
-.recap{border-left:4px solid var(--or)}
-.sources{font-size:.93rem; color:var(--gris)}
-.sources li{margin-bottom:8px}
-.cta{
-  background:var(--bleu-fonce); color:#F6F1E7; border-radius:16px; padding:32px 30px; margin:52px 0 40px
-}
-.cta h2{color:#fff; margin:0 0 10px; font-size:1.5rem}
-.cta p{color:#D6E2EA; margin-bottom:22px}
-.buttons{display:flex; flex-wrap:wrap; gap:12px}
-.btn{
-  display:inline-block; padding:12px 20px; border-radius:999px; font-weight:600; font-size:.95rem;
-  border:1px solid transparent; background:var(--braise); color:#fff
-}
-.btn:hover{background:var(--or); color:#fff; border-color:transparent}
-.btn.ghost{background:transparent; border-color:rgba(246,241,231,.42); color:#F6F1E7}
-.btn.ghost:hover{border-color:var(--braise); background:transparent; color:#fff}
-.suite{margin:44px 0}
-.suite ul{list-style:none; padding:0; margin:0}
-.suite li{border-top:1px solid var(--trait); padding:16px 0}
-.suite li a{font-family:'Newsreader',Georgia,serif; font-size:1.12rem; border:0; color:var(--bleu-fonce)}
-.suite li a:hover{color:var(--braise)}
-.suite li span{display:block; font-size:.93rem; color:var(--gris); margin-top:4px}
-footer.site{border-top:1px solid var(--trait); background:var(--ivoire-2); margin-top:60px; padding:36px 0 48px}
-footer.site p{font-size:.92rem; color:var(--gris); margin-bottom:12px}
-footer.site a{color:var(--bleu)}
-.skip{position:absolute; left:-9999px}
-.skip:focus{left:24px; top:14px; background:#fff; padding:10px 16px; border-radius:8px; z-index:9}
-@media (max-width:560px){ body{font-size:17px} main{padding-top:38px} .cta{padding:26px 22px} }
-@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} html{scroll-behavior:auto} }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 [
   {
@@ -115,26 +35,28 @@ footer.site a{color:var(--bleu)}
     "inLanguage": "fr",
     "author": {
       "@type": "Person",
+      "@id": "https://cequeliafaitdenous.com/#auteur",
       "name": "Aurélien Mizeret",
-      "url": "https://aurelienmizeret.com",
-      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "jobTitle": "Consultant, formateur, architecte de la complexité",
+      "url": "https://aurelienmizeret.com/",
       "sameAs": [
-        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
         "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
-        "https://aurelienmizeret.com",
-        "https://alliages.work"
+        "https://www.eventbrite.fr/o/121541945462",
+        "https://alliages.work/"
       ]
     },
     "publisher": {
       "@type": "Person",
+      "@id": "https://cequeliafaitdenous.com/#auteur",
       "name": "Aurélien Mizeret",
-      "url": "https://aurelienmizeret.com",
-      "jobTitle": "Consultant, formateur et coach de dirigeants",
+      "jobTitle": "Consultant, formateur, architecte de la complexité",
+      "url": "https://aurelienmizeret.com/",
       "sameAs": [
-        "https://www.linkedin.com/in/aurélien-mizeret",
+        "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
         "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
-        "https://aurelienmizeret.com",
-        "https://alliages.work"
+        "https://www.eventbrite.fr/o/121541945462",
+        "https://alliages.work/"
       ]
     },
     "mainEntityOfPage": {
@@ -146,27 +68,27 @@ footer.site a{color:var(--bleu)}
     "dateModified": "2026-08-01",
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Ce que l'IA fait de nous",
-      "url": "https://cequeliafaitdenous.com"
+      "@id": "https://cequeliafaitdenous.com/#site"
     },
     "about": {
       "@type": "Book",
+      "@id": "https://cequeliafaitdenous.com/#livre",
       "name": "Ce que l'IA fait de nous",
-      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "alternativeHeadline": "Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
       "author": {
         "@type": "Person",
+        "@id": "https://cequeliafaitdenous.com/#auteur",
         "name": "Aurélien Mizeret",
-        "url": "https://aurelienmizeret.com",
-        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "jobTitle": "Consultant, formateur, architecte de la complexité",
+        "url": "https://aurelienmizeret.com/",
         "sameAs": [
-          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
           "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
-          "https://aurelienmizeret.com",
-          "https://alliages.work"
+          "https://www.eventbrite.fr/o/121541945462",
+          "https://alliages.work/"
         ]
       },
-      "url": "https://cequeliafaitdenous.com",
-      "bookFormat": "https://schema.org/Paperback",
+      "url": "https://cequeliafaitdenous.com/",
       "inLanguage": "fr",
       "numberOfPages": 220,
       "sameAs": [
@@ -176,22 +98,23 @@ footer.site a{color:var(--bleu)}
     },
     "mentions": {
       "@type": "Book",
+      "@id": "https://cequeliafaitdenous.com/#livre",
       "name": "Ce que l'IA fait de nous",
-      "alternateName": "Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "alternativeHeadline": "Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
       "author": {
         "@type": "Person",
+        "@id": "https://cequeliafaitdenous.com/#auteur",
         "name": "Aurélien Mizeret",
-        "url": "https://aurelienmizeret.com",
-        "jobTitle": "Consultant, formateur et coach de dirigeants",
+        "jobTitle": "Consultant, formateur, architecte de la complexité",
+        "url": "https://aurelienmizeret.com/",
         "sameAs": [
-          "https://www.linkedin.com/in/aurélien-mizeret",
+          "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
           "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
-          "https://aurelienmizeret.com",
-          "https://alliages.work"
+          "https://www.eventbrite.fr/o/121541945462",
+          "https://alliages.work/"
         ]
       },
-      "url": "https://cequeliafaitdenous.com",
-      "bookFormat": "https://schema.org/Paperback",
+      "url": "https://cequeliafaitdenous.com/",
       "inLanguage": "fr",
       "numberOfPages": 220,
       "sameAs": [
@@ -209,7 +132,7 @@ footer.site a{color:var(--bleu)}
         "@type": "ListItem",
         "position": 1,
         "name": "Ce que l'IA fait de nous",
-        "item": "https://cequeliafaitdenous.com"
+        "item": "https://cequeliafaitdenous.com/"
       },
       {
         "@type": "ListItem",
@@ -253,39 +176,59 @@ footer.site a{color:var(--bleu)}
 </script>
 </head>
 <body>
-<a class="skip" href="#contenu">Aller au contenu</a>
+<a href="#contenu" class="skip-link">Aller au contenu</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="/">Ce que l'IA fait de nous <span>✦</span></a>
-    <nav class="top" aria-label="Navigation principale">
-      <a href="/">Le livre</a>
-      <a href="/#extrait">Extrait gratuit</a>
-      <a href="https://aurelienmizeret.com">L'auteur</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand" aria-label="Accueil">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="#255C82" stroke-opacity=".4"/>
+        <circle cx="16" cy="16" r="8.5" fill="none" stroke="#255C82" stroke-opacity=".7"/>
+        <circle cx="16" cy="16" r="4" fill="#C99A4A"/>
+      </svg>
+      Ce que l'IA fait de nous
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="/#livre">Le livre</a>
+      <a href="/#mouvements">À l'intérieur</a>
+      <a href="/#quiz">Le miroir</a>
+      <a href="/#explorer">Les idées</a>
+      <a href="/#auteur">L'auteur</a>
+      <a href="/#extrait" class="btn btn-ember">10 pages offertes</a>
+      <a href="/#commander" class="btn btn-primary">Commander</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
 
 <main id="contenu">
-  <article class="wrap">
-    <p class="eyebrow">Chapitre sept · La fracture</p>
+<article class="art">
+  <div class="art-wrap">
+    <p class="breadcrumb"><a href="/">Ce que l'IA fait de nous</a> · Fracture d'usage de l'IA</p>
+    <span class="eyebrow">Chapitre sept · La fracture</span>
     <h1>La fracture n'est pas d'accès, elle est d'usage</h1>
     <p class="chapo">Le même outil, au même prix, au même moment, pour tout le monde. C'est précisément ce qui rend cette fracture inédite : elle ne se joue plus sur ce que l'on possède, mais sur ce que l'on sait en faire.</p>
 
-    <div class="panel">
-      <h3>Ce que vous allez comprendre</h3>
+    <div class="art-box ember">
+      <span class="bx-label">Ce que vous allez comprendre</span>
       <ul>
-      <li>Pourquoi l'égalité d'accès ne produit pas l'égalité d'usage.</li>
-      <li>La ligne de partage réelle entre deux façons opposées d'utiliser une IA.</li>
-      <li>Ce que révèle le classement des usages les plus fréquents, sans mépris pour personne.</li>
-      <li>Le risque le moins commenté : la machine à moyenne et l'uniformisation des idées.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Pourquoi l'égalité d'accès ne produit pas l'égalité d'usage.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>La ligne de partage réelle entre deux façons opposées d'utiliser une IA.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Ce que révèle le classement des usages les plus fréquents, sans mépris pour personne.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Le risque le moins commenté : la machine à moyenne et l'uniformisation des idées.</li>
       </ul>
     </div>
-
 
     <h2>Une fracture d'un genre nouveau</h2>
     <p>Les fractures numériques précédentes étaient des fractures d'équipement : avoir ou non un ordinateur, une connexion, un débit correct. Les travaux sur ce que les chercheurs appellent la fracture de second niveau montrent depuis vingt ans que l'écart le plus déterminant se situe ailleurs : dans la compétence d'usage, une fois l'accès acquis.</p>
     <p>L'intelligence artificielle générative pousse ce phénomène à l'extrême. Elle amplifie ce qu'on lui apporte. Celui qui arrive avec une question construite repart avec un travail démultiplié. Celui qui arrive sans intention repart avec une opinion qu'il n'a pas formée. Le même outil, deux trajectoires opposées : c'est l'effet Matthieu, où l'avantage initial se convertit en avantage cumulé.</p>
+
+    <div class="art-mid reveal">
+      <p>Ce chapitre vous parle ? Lisez les 10 premières pages du livre, gratuitement.</p>
+      <a href="/#extrait" class="btn btn-ember">Les recevoir en un clic</a>
+    </div>
 
     <h2>Les deux pôles, sans caricature</h2>
     <p>D'un côté, un usage qui vise haut : structurer une pensée complexe, croiser des sources, tenir un raisonnement sur la durée. De l'autre, un usage domestique et immédiat, aussi légitime dans son ordre, mais qui n'accroît aucune capacité.</p>
@@ -299,79 +242,159 @@ footer.site a{color:var(--bleu)}
     <p>Une étude publiée dans <em>Science Advances</em> en 2024 a produit un résultat qui devrait circuler beaucoup plus. Assistés par une IA, les auteurs individuels produisent des textes jugés plus créatifs. Pris ensemble, ces textes se ressemblent davantage. Le gain est individuel, la perte est collective.</p>
     <p>Autrement dit, la machine n'abaisse pas le niveau : elle le rassemble autour d'une moyenne. Une civilisation où chacun écrit un peu mieux et où tous écrivent la même chose ne perd pas en qualité, elle perd en diversité. Or c'est la diversité qui produit le neuf.</p>
 
-
-    <div class="foyer" aria-hidden="true">
-<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="66" cy="66" r="63" stroke="#E2D8C6"/>
-<circle cx="66" cy="66" r="47" stroke="#DCCFB6"/>
-<circle cx="66" cy="66" r="31" stroke="#D3C2A2"/>
-<circle cx="66" cy="66" r="9" fill="#D9722C"/>
-<circle cx="66" cy="66" r="15" stroke="#C08A2E"/>
-</svg></div>
-
-    <div class="panel recap">
-      <h2>À retenir</h2>
+    <div class="art-box">
+      <span class="bx-label">À retenir</span>
       <ul>
-      <li>L'accès est devenu presque universel, l'écart s'est déplacé vers la compétence d'usage.</li>
-      <li>L'IA amplifie l'intention apportée : elle creuse les écarts au lieu de les combler.</li>
-      <li>Les usages dominants disent notre solitude bien plus que notre paresse.</li>
-      <li>L'uniformisation des productions est un risque collectif que les gains individuels masquent.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>L'accès est devenu presque universel, l'écart s'est déplacé vers la compétence d'usage.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>L'IA amplifie l'intention apportée : elle creuse les écarts au lieu de les combler.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Les usages dominants disent notre solitude bien plus que notre paresse.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>L'uniformisation des productions est un risque collectif que les gains individuels masquent.</li>
       </ul>
     </div>
 
     <h2>Questions fréquentes</h2>
-    <h3>Qu'appelle-t-on fracture d'usage ?</h3>
-    <p>L'écart de bénéfices tirés d'une même technologie par des personnes qui y ont un accès identique. Il dépend de la compétence, de l'intention et de la culture d'usage, pas de l'équipement.</p>
-    <h3>L'IA va-t-elle réduire les inégalités puisqu'elle est accessible à tous ?</h3>
-    <p>Rien ne l'indique. Un outil qui amplifie ce qu'on lui apporte tend à amplifier aussi les écarts de départ, un phénomène connu en sociologie sous le nom d'effet Matthieu.</p>
-    <h3>Pourquoi parle-t-on d'uniformisation alors que l'IA rend plus créatif ?</h3>
-    <p>Les deux constats coexistent. Des travaux publiés dans Science Advances en 2024 montrent un gain de créativité pour chaque auteur pris isolément, et une plus grande ressemblance entre les productions prises dans leur ensemble.</p>
+    <div class="art-faq">
+      <h3>Qu'appelle-t-on fracture d'usage ?</h3>
+      <p>L'écart de bénéfices tirés d'une même technologie par des personnes qui y ont un accès identique. Il dépend de la compétence, de l'intention et de la culture d'usage, pas de l'équipement.</p>
+      <h3>L'IA va-t-elle réduire les inégalités puisqu'elle est accessible à tous ?</h3>
+      <p>Rien ne l'indique. Un outil qui amplifie ce qu'on lui apporte tend à amplifier aussi les écarts de départ, un phénomène connu en sociologie sous le nom d'effet Matthieu.</p>
+      <h3>Pourquoi parle-t-on d'uniformisation alors que l'IA rend plus créatif ?</h3>
+      <p>Les deux constats coexistent. Des travaux publiés dans Science Advances en 2024 montrent un gain de créativité pour chaque auteur pris isolément, et une plus grande ressemblance entre les productions prises dans leur ensemble.</p>
+    </div>
 
-    <div class="panel sources">
-      <h3>Sources et références citées</h3>
+    <div class="art-box art-sources">
+      <span class="bx-label">Sources et références citées</span>
       <ul>
-      <li>E. Hargittai, travaux sur la fracture numérique de second niveau, depuis 2002.</li>
-      <li>R. K. Merton, effet Matthieu, <em>Science</em>, 1968.</li>
-      <li>A. Doshi, O. Hauser, <em>Science Advances</em>, 2024, créativité individuelle et homogénéisation collective.</li>
-      <li>Relevés d'usages des assistants conversationnels, <em>Harvard Business Review</em>, 2024 et 2025.</li>
+          <li>E. Hargittai, travaux sur la fracture numérique de second niveau, depuis 2002.</li>
+          <li>R. K. Merton, effet Matthieu, <em>Science</em>, 1968.</li>
+          <li>A. Doshi, O. Hauser, <em>Science Advances</em>, 2024, créativité individuelle et homogénéisation collective.</li>
+          <li>Relevés d'usages des assistants conversationnels, <em>Harvard Business Review</em>, 2024 et 2025.</li>
       </ul>
-      <p style="margin:16px 0 0">L'ensemble des références (plus de cent études, rapports et ouvrages) figure dans la section « Notes et sources » du livre.</p>
+      <p>L'ensemble des références figure dans la section « Notes et sources » du livre.</p>
     </div>
+  </div>
+</article>
 
-    <div class="cta">
-      <h2>De quel côté de la fracture vous placez-vous ?</h2>
-      <p>Le chapitre sept de l'essai déplie cette fracture, ses causes et les gestes concrets qui permettent de rester du côté de ceux qui comprennent.</p>
-      <div class="buttons">
-        <a class="btn" href="/#extrait">Recevoir le prologue gratuitement</a>
-        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBZ4JY2M">Commander le broché</a>
-        <a class="btn ghost" href="https://www.amazon.fr/dp/B0HBQHBDFP">Lire sur Kindle</a>
-      </div>
-    </div>
+<section class="ribbon">
+  <div class="wrap">
+    <p>De quel côté de la fracture vous placez-vous ? <span class="em">Les 10 premières pages sont offertes.</span></p>
+    <a href="/#extrait" class="btn">Les recevoir en un clic</a>
+  </div>
+</section>
 
-    <section class="suite">
+<div class="art">
+  <div class="art-wrap">
+    <div class="art-next">
       <h2>Poursuivre la lecture</h2>
-      <ul>
-    <li><a href="/transmettre-a-l-ere-de-l-ia">Informer n'est pas transmettre</a><span>La machine est le plus grand informateur de l'histoire, et n'a jamais rien transmis.</span></li>
-    <li><a href="/ia-solitude-deshumanisation">L'IA, la solitude et le lien</a><span>Ce que révèle le succès des compagnons artificiels, et ce qu'on peut lui opposer.</span></li>
-    <li><a href="/decider-a-l-ere-de-l-ia">Qui décide à notre place ?</a><span>Recommandation, délégation, paralysie : l'anatomie d'une décision qui nous échappe.</span></li>
-      </ul>
-    </section>
+        <a href="/transmettre-a-l-ere-de-l-ia"><strong>Informer n'est pas transmettre</strong><span>La machine est le plus grand informateur de l'histoire, et n'a jamais rien transmis.</span></a>
+        <a href="/ia-solitude-deshumanisation"><strong>L'IA, la solitude et le lien</strong><span>Ce que révèle le succès des compagnons artificiels, et ce qu'on peut lui opposer.</span></a>
+        <a href="/decider-a-l-ere-de-l-ia"><strong>Qui décide à notre place ?</strong><span>Recommandation, délégation, paralysie : l'anatomie d'une décision qui nous échappe.</span></a>
+    </div>
 
-    <p style="font-size:.95rem;color:#5C6B75">Ces pages prolongent <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work">Alliages</a>, do-tank indépendant et non commercial sur la gouvernance de l'IA. Les développements en vidéo sont publiés sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">Le dirigeant augmenté</a>.</p>
-  </article>
+    <div class="center" style="margin:44px 0 10px">
+      <a href="https://www.amazon.fr/dp/B0HBZ4JY2M" target="_blank" rel="noopener" class="btn btn-primary">Commander le broché · 18,90 €</a>
+      <a href="https://www.amazon.fr/dp/B0HBQHBDFP" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-left:10px">Lire sur Kindle · 7,99 €</a>
+    </div>
+
+    <p class="art-foot">Cette page prolonge <a href="/"><em>Ce que l'IA fait de nous</em></a>, essai d'Aurélien Mizeret. Les questions de gouvernance ouvertes ici sont travaillées collectivement au sein d'<a href="https://alliages.work/" target="_blank" rel="noopener">Alliages</a>, do-tank indépendant et non commercial. Les développements en vidéo paraissent sur la chaîne <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener">Le dirigeant augmenté</a>, et le reste du travail de l'auteur sur <a href="https://aurelienmizeret.com/" target="_blank" rel="noopener">aurelienmizeret.com</a>.</p>
+  </div>
+</div>
 </main>
 
-<footer class="site">
+<footer>
   <div class="wrap">
-    <p><strong>Aurélien Mizeret</strong>, consultant, formateur et coach de dirigeants, architecte de la complexité. Auteur de <em>Ce que l'IA fait de nous : les bonnes questions pour rester humains à l'ère de l'intelligence artificielle</em>.</p>
-    <p>
-      <a href="https://cequeliafaitdenous.com">cequeliafaitdenous.com</a> ·
-      <a href="https://aurelienmizeret.com">aurelienmizeret.com</a> ·
-      <a href="https://alliages.work">alliages.work</a> ·
-      <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9">YouTube, Le dirigeant augmenté</a> ·
-      <a href="https://www.linkedin.com/in/aurélien-mizeret">LinkedIn</a>
-    </p>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="#C99A4A" stroke-opacity=".45"/>
+            <circle cx="16" cy="16" r="8.5" fill="none" stroke="#C99A4A" stroke-opacity=".7"/>
+            <circle cx="16" cy="16" r="4" fill="#E4C081"/>
+          </svg>
+          Ce que l'IA fait de nous
+        </div>
+        <p class="foot-p">Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle. Un essai d'Aurélien Mizeret.</p>
+        <div class="social-row on-dark" aria-label="Réseaux sociaux">
+          <a href="https://www.linkedin.com/in/aur%C3%A9lien-mizeret/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.4h3.1V21H3.4V8.4zM9.3 8.4h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9.3V8.4z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.41-4.73a2.47 2.47 0 0 0-1.74-1.75C19.32 5.1 12 5.1 12 5.1s-7.32 0-8.85.42A2.47 2.47 0 0 0 1.41 7.27C1 8.8 1 12 1 12s0 3.2.41 4.73a2.47 2.47 0 0 0 1.74 1.75C4.68 18.9 12 18.9 12 18.9s7.32 0 8.85-.42a2.47 2.47 0 0 0 1.74-1.75C23 15.2 23 12 23 12zM9.7 15.15V8.85L15.2 12l-5.5 3.15z"/></svg>
+          </a>
+          <a href="https://alliages.work/" target="_blank" rel="noopener" aria-label="Alliages">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+          </a>
+          <a href="https://wa.me/33619958971" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.28-1.38A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.5 0-2.98-.4-4.27-1.16l-.31-.18-3.16.83.84-3.08-.2-.32A8.16 8.16 0 0 1 3.8 12 8.2 8.2 0 1 1 12 20.2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Le livre</h4>
+        <a href="/#extrait"><strong style="color:#F0D9A8">10 pages offertes</strong></a>
+        <a href="/#livre">Présentation</a>
+        <a href="/#quiz">Le miroir</a>
+        <a href="/#commander">Commander</a>
+      </div>
+      <div class="foot-col">
+        <h4>Les idées</h4>
+        <a href="/esprit-critique-intelligence-artificielle">Esprit critique</a>
+        <a href="/dette-cognitive-ia-etudes">Dette cognitive</a>
+        <a href="/transmettre-a-l-ere-de-l-ia">Transmettre</a>
+        <a href="/redevenir-pleinement-humains">Redevenir humains</a>
+        <a href="/#explorer">Toutes les pages</a>
+      </div>
+      <div class="foot-col">
+        <h4>L'auteur &amp; contact</h4>
+        <a href="https://aurelienmizeret.com/" target="_blank" rel="noopener">aurelienmizeret.com</a>
+        <a href="https://alliages.work/" target="_blank" rel="noopener">Alliages</a>
+        <a href="https://www.youtube.com/@Le_dirigeant_augment%C3%A9" target="_blank" rel="noopener">YouTube</a>
+        <a href="/#contact">Écrire à l'auteur</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Aurélien Mizeret. Tous droits réservés.</span>
+      <span>Mentions légales · Confidentialité</span>
+    </div>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Retour en haut">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  var onScroll = function(){
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+    toTop.classList.toggle('show', window.scrollY > 620);
+  };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({ top:0, behavior: reduce ? 'auto' : 'smooth' }); });
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
 </body>
 </html>
