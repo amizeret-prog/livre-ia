@@ -957,6 +957,168 @@ footer{background:var(--encre);color:rgba(246,243,233,.7);padding:72px 0 40px}
   "use strict";
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.getElementById('year').textContent = new Date().getFullYear();
+  /**
+ * Ce que l'IA fait de nous — collecte des formulaires du site dans Google Sheets
+ * À coller dans Extensions > Apps Script de votre feuille Google Sheets.
+ *
+ * 1. Remplacez SECRET par une chaîne de votre choix (la même que dans le site).
+ * 2. Lancez la fonction setup() une fois (crée les onglets et les en-têtes).
+ * 3. Déployer > Nouveau déploiement > Application web
+ *    - Exécuter en tant que : moi
+ *    - Qui a accès : tout le monde
+ *    - Copiez l'URL /exec dans le fichier patch-formulaires-site.js
+ * 4. (Optionnel) Lancez installerDigestHebdo() pour recevoir un récap chaque lundi.
+ */
+
+// ————— Réglages —————
+var SECRET       = 'changez-moi-123456';      // doit être identique côté site
+var NOTIFY_EMAIL = 'amizeret@gmail.com';      // vos notifications
+var NOTIF_INSTANT = true;                     // e-mail à chaque nouveau contact
+
+// ————— Point d'entrée : le site envoie ici —————
+function doPost(e) {
+  try {
+    var data = JSON.parse(e.postData.contents);
+    if (data.secret !== SECRET) return json({ ok: false, error: 'unauthorized' });
+
+    var ss  = SpreadsheetApp.getActiveSpreadsheet();
+    var now = new Date();
+
+    if (data.type === 'contact') {
+      ss.getSheetByName('Contacts').appendRow([
+        now,
+        data.nom       || '',
+        data.email     || '',
+        data.objet     || '',
+        data.structure || '',
+        data.message   || '',
+        data.page      || '',
+        'Nouveau'
+      ]);
+      if (NOTIF_INSTANT) {
+        MailApp.sendEmail(
+          NOTIFY_EMAIL,
+          'Nouveau message site — ' + (data.objet || 'contact'),
+          data.nom + ' (' + data.email + ')\n' +
+          (data.structure ? data.structure + '\n' : '') + '\n' +
+          (data.message || '')
+        );
+      }
+    } else {
+      var sh    = ss.getSheetByName('Prologue');
+      var email = String(data.email || '').trim().toLowerCase();
+      if (!email) return json({ ok: false, error: 'no-email' });
+
+      // dédoublonnage : on ne réinscrit pas deux fois la même adresse
+      var deja = sh.getLastRow() > 1
+        ? sh.getRange(2, 2, sh.getLastRow() - 1, 1).getValues()
+             .map(function (r) { return String(r[0]).toLowerCase(); })
+        : [];
+      if (deja.indexOf(email) !== -1) return json({ ok: true, duplicate: true });
+
+      sh.appendRow([now, email, data.source || 'site', data.page || '', 'Non envoyé']);
+    }
+    return json({ ok: true });
+  } catch (err) {
+    return json({ ok: false, error: String(err) });
+  }
+}
+
+function json(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj))
+                       .setMimeType(ContentService.MimeType.JSON);
+}
+
+// ————— Création des onglets —————
+function setup() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+
+  var p = ss.getSheetByName('Prologue') || ss.insertSheet('Prologue');
+  p.clear();
+  p.appendRow(['Date', 'Email', 'Source', 'Page', 'Prologue envoyé']);
+  p.getRange('A1:E1').setFontWeight('bold').setBackground('#E6EDF3');
+  p.setFrozenRows(1);
+  p.getRange('A:A').setNumberFormat('dd/mm/yyyy hh:mm');
+
+  var c = ss.getSheetByName('Contacts') || ss.insertSheet('Contacts');
+  c.clear();
+  c.appendRow(['Date', 'Nom', 'Email', 'Objet', 'Structure', 'Message', 'Page', 'Statut']);
+  c.getRange('A1:H1').setFontWeight('bold').setBackground('#E6EDF3');
+  c.setFrozenRows(1);
+  c.getRange('A:A').setNumberFormat('dd/mm/yyyy hh:mm');
+  c.setColumnWidth(6, 420);
+
+  var r = ss.getSheetByName('Récap') || ss.insertSheet('Récap');
+  r.clear();
+  r.getRange('A1').setValue('Récapitulatif').setFontWeight('bold').setFontSize(14);
+  r.getRange('A3:B9').setValues([
+    ['Inscrits prologue (total)',      '=MAX(0;NBVAL(Prologue!B:B)-1)'],
+    ['Inscrits 7 derniers jours',      '=NB.SI(Prologue!A:A;">="&AUJOURDHUI()-7)'],
+    ['Inscrits 30 derniers jours',     '=NB.SI(Prologue!A:A;">="&AUJOURDHUI()-30)'],
+    ['Prologues restant à envoyer',    '=NB.SI(Prologue!E:E;"Non envoyé")'],
+    ['Messages reçus (total)',         '=MAX(0;NBVAL(Contacts!C:C)-1)'],
+    ['Messages 7 derniers jours',      '=NB.SI(Contacts!A:A;">="&AUJOURDHUI()-7)'],
+    ['Messages à traiter',             '=NB.SI(Contacts!H:H;"Nouveau")']
+  ]);
+  r.getRange('A11').setValue('Répartition des objets de message').setFontWeight('bold');
+  r.getRange('A12').setFormula('=QUERY(Contacts!D2:D;"select D, count(D) where D is not null group by D order by count(D) desc label D \'Objet\', count(D) \'Nombre\'")');
+  r.getRange('D11').setValue('10 dernières inscriptions').setFontWeight('bold');
+  r.getRange('D12').setFormula('=QUERY(Prologue!A2:B;"select A, B where B is not null order by A desc limit 10 label A \'Date\', B \'Email\'")');
+  r.setColumnWidth(1, 240);
+  r.setColumnWidth(4, 160);
+  r.setColumnWidth(5, 260);
+}
+
+// ————— Récap hebdomadaire par e-mail —————
+function digestHebdo() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var depuis = new Date(Date.now() - 7 * 24 * 3600 * 1000);
+
+  var insc = lignesDepuis(ss.getSheetByName('Prologue'), depuis);
+  var msgs = lignesDepuis(ss.getSheetByName('Contacts'), depuis);
+
+  var html = '<div style="font-family:Helvetica,Arial,sans-serif;color:#374553">' +
+    '<h2 style="color:#152230">Récap de la semaine</h2>' +
+    '<p><b>' + insc.length + '</b> demande(s) de prologue, <b>' + msgs.length + '</b> message(s).</p>';
+
+  if (insc.length) {
+    html += '<h3 style="color:#255C82">Prologue</h3><ul>';
+    insc.forEach(function (r) {
+      html += '<li>' + Utilities.formatDate(new Date(r[0]), Session.getScriptTimeZone(), 'dd/MM') +
+              ' — ' + r[1] + '</li>';
+    });
+    html += '</ul>';
+  }
+  if (msgs.length) {
+    html += '<h3 style="color:#255C82">Messages</h3>';
+    msgs.forEach(function (r) {
+      html += '<p style="border-left:3px solid #C99A4A;padding-left:12px"><b>' + r[1] + '</b> — ' +
+              r[2] + '<br><i>' + r[3] + '</i><br>' + String(r[5]).slice(0, 400) + '</p>';
+    });
+  }
+  html += '<p style="font-size:13px"><a href="' + ss.getUrl() + '">Ouvrir la feuille</a></p></div>';
+
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: 'Récap site — ' + insc.length + ' prologue(s), ' + msgs.length + ' message(s)',
+    htmlBody: html
+  });
+}
+
+function lignesDepuis(sh, depuis) {
+  if (!sh || sh.getLastRow() < 2) return [];
+  return sh.getRange(2, 1, sh.getLastRow() - 1, sh.getLastColumn())
+           .getValues()
+           .filter(function (r) { return r[0] instanceof Date && r[0] >= depuis; });
+}
+
+function installerDigestHebdo() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === 'digestHebdo') ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger('digestHebdo').timeBased()
+    .onWeekDay(ScriptApp.WeekDay.MONDAY).atHour(8).create();
+}
 
   var nav = document.getElementById('nav');
   var toTop = document.getElementById('toTop');
