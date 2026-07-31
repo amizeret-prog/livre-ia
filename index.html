@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  google-site-verification=fuv77Zz30dOLDdY5SOxcrgJmMJDbOSZlpOAvAFYYUhc
 <title>Ce que l'IA fait de nous — Aurélien Mizeret</title>
 <meta name="description" content="Un essai d'Aurélien Mizeret. Nous n'aurons pas été remplacés — nous nous serons absentés. Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle.">
 <meta name="author" content="Aurélien Mizeret">
@@ -393,40 +394,201 @@ footer{background:var(--encre);color:rgba(246,243,233,.7);padding:72px 0 40px}
 
 <!-- Données structurées : aide Google & les réseaux à comprendre qu'il s'agit d'un livre.
      Ajustez l'URL et l'ISBN si vous en avez un. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Book",
-  "name": "Ce que l'IA fait de nous",
-  "alternativeHeadline": "Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
-  "description": "On ne se fait pas remplacer, on se délègue. Un essai d'Aurélien Mizeret sur ce que l'usage permanent de l'IA fait à notre rapport à la vérité, au réel, aux autres et à nous-mêmes.",
-  "inLanguage": "fr",
-  "numberOfPages": 220,
-  "bookFormat": "https://schema.org/Paperback",
-  "url": "https://aurelienmizeret.com/ce-que-lia-fait-de-nous/",
-  "image": "https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Aurélien Mizeret",
-    "jobTitle": "Consultant, formateur, architecte de la complexité",
-    "url": "https://aurelienmizeret.com/",
-    "sameAs": [
-      "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
-      "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
-      "https://www.eventbrite.fr/o/121541945462"
-    ]
-  },
-  "offers": [
-    {"@type": "Offer", "name": "Édition Kindle", "price": "7.99", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "name": "Broché", "price": "18.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-    {"@type": "Offer", "name": "Exemplaire dédicacé", "price": "24.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
-  ]
-}
-</script>
 </head>
 <body>
 <a href="#top" class="skip-link">Aller au contenu</a>
+<!-- ============================================================
+     BLOC SEO — Ce que l'IA fait de nous
+     À coller dans le <head> de index.html.
+     Il REMPLACE le bloc <script type="application/ld+json"> existant.
+     ============================================================ -->
 
+
+<!-- 1. Validation Google Search Console
+     Colle ici la balise que Google te donne dans « Balise HTML ».
+     Exemple de ce à quoi elle ressemble (ne recopie PAS celle-ci) :
+     <meta name="google-site-verification" content="TON_CODE_A_TOI"> -->
+
+
+<!-- 2. Données structurées
+     Trois objets liés : le livre, l'auteur, la FAQ.
+     La FAQ permet à Google d'afficher tes questions dépliables
+     directement dans les résultats de recherche. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://cequeliafaitdenous.com/#site",
+      "url": "https://cequeliafaitdenous.com/",
+      "name": "Ce que l'IA fait de nous",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://cequeliafaitdenous.com/#auteur" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cequeliafaitdenous.com/#auteur",
+      "name": "Aurélien Mizeret",
+      "jobTitle": "Consultant, formateur, architecte de la complexité",
+      "url": "https://aurelienmizeret.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/aur%C3%A9lien-mizeret/",
+        "https://www.youtube.com/@Le_dirigeant_augment%C3%A9",
+        "https://www.eventbrite.fr/o/121541945462"
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://cequeliafaitdenous.com/#livre",
+      "name": "Ce que l'IA fait de nous",
+      "alternativeHeadline": "Les bonnes questions pour rester humains à l'ère de l'intelligence artificielle",
+      "description": "On ne se fait pas remplacer, on se délègue. Un essai d'Aurélien Mizeret sur ce que l'usage permanent de l'IA fait à notre rapport à la vérité, au réel, aux autres et à nous-mêmes.",
+      "inLanguage": "fr",
+      "numberOfPages": 220,
+      "genre": "Essai",
+      "url": "https://cequeliafaitdenous.com/",
+      "image": "https://aurelienmizeret.com/og-ce-que-lia-fait-de-nous.jpg",
+      "author": { "@id": "https://cequeliafaitdenous.com/#auteur" },
+      "workExample": [
+        {
+          "@type": "Book",
+          "bookFormat": "https://schema.org/EBook",
+          "name": "Ce que l'IA fait de nous — édition Kindle",
+          "inLanguage": "fr",
+          "url": "https://www.amazon.fr/dp/B0HBQHBDFP",
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": "https://www.amazon.fr/dp/B0HBQHBDFP"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "7.99",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.amazon.fr/dp/B0HBQHBDFP"
+          }
+        },
+        {
+          "@type": "Book",
+          "bookFormat": "https://schema.org/Paperback",
+          "name": "Ce que l'IA fait de nous — broché",
+          "inLanguage": "fr",
+          "numberOfPages": 220,
+          "url": "https://www.amazon.fr/dp/B0HBZ4JY2M",
+          "offers": {
+            "@type": "Offer",
+            "price": "18.90",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.amazon.fr/dp/B0HBZ4JY2M"
+          }
+        },
+        {
+          "@type": "Book",
+          "bookFormat": "https://schema.org/Hardcover",
+          "name": "Ce que l'IA fait de nous — exemplaire dédicacé",
+          "inLanguage": "fr",
+          "url": "https://cequeliafaitdenous.com/#contact",
+          "offers": {
+            "@type": "Offer",
+            "price": "24.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cequeliafaitdenous.com/#contact"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cequeliafaitdenous.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faut-il s'y connaître en IA pour lire ce livre ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, au contraire. Ce n'est pas un livre technique. Il ne parle pas de la machine, mais de ce qu'elle fait à notre façon de décider, de ressentir et de nous relier. Aucun prérequis, sinon l'envie de regarder en face."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "C'est un livre pour ou contre l'IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ni l'un ni l'autre. L'IA n'y est ni sauveur ni prédateur. Le propos n'est pas de trancher, mais de rester lucide, et de refuser le faux choix entre l'émerveillement béat et la panique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De quoi parle-t-il, au fond ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "D'un déplacement que personne ne remarque : nous ne nous faisons pas remplacer, nous déléguons. Décision après décision, jugement après jugement, nous cédons à la machine ce qui nous rendait présents. Le livre suit ce fil, de la décision la plus intime jusqu'à la souveraineté des nations, et propose un chemin pour redevenir pleinement humain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À qui s'adresse-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "À tout le monde, c'est voulu. Le livre touche autant la vie personnelle que professionnelle : le parent qui tend une tablette, le dirigeant qui n'ose plus décider, celui qui sent qu'il scrolle un peu trop. Si vous utilisez l'IA, ou si vos proches le font, il vous concerne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il le lire dans l'ordre ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est préférable. Le livre est construit comme un parcours en trois mouvements : la lucidité, les menaces silencieuses, puis le chemin pour rester humain. Il y a une progression émotionnelle, un inconfort qui se change en élan. Chaque chapitre se tient aussi seul, si vous voulez piocher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels formats sont disponibles, et à quel prix ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trois formats : la version Kindle à 7,99 €, le broché à 18,90 € pour environ 220 pages, et un exemplaire dédicacé sur demande directe à 24,00 €. Le broché et le Kindle sont disponibles sur Amazon, le dédicacé se commande via le formulaire de contact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment obtenir un exemplaire dédicacé ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Écrivez via le formulaire de contact en choisissant l'objet exemplaire dédicacé. Précisez le nom à qui l'adresser et l'éventuel mot que vous souhaitez. L'auteur vous répond directement pour les modalités."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le quiz miroir enregistre-t-il mes réponses ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Tout se passe dans votre navigateur, rien n'est envoyé ni stocké. C'est un miroir pour vous seul, pas un sondage qui vous mesure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des conférences ou des interventions ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Aurélien Mizeret intervient auprès de dirigeants, d'équipes et d'organisations sur les thèmes du livre, de la lucidité face à l'IA à la décision et au lien collectif. Passez par le formulaire de contact, objet conférence ou intervention, en indiquant le contexte et la date envisagée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on commander plusieurs exemplaires pour une équipe ou une école ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Pour une commande en volume, entreprise, établissement ou événement, écrivez via le formulaire avec l'objet correspondant."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
@@ -641,17 +803,18 @@ footer{background:var(--encre);color:rgba(246,243,233,.7);padding:72px 0 40px}
 <!-- AUTEUR -->
 <section class="section panel-2" id="auteur">
   <div class="wrap author-grid">
-    <div class="portrait reveal">
-      <span class="mono">AM</span>
-      <span class="note">
-        <img src="images/portrait-aurelien.jpg" alt="Aurélien Mizeret, auteur de Ce que l'IA fait de nous" loading="lazy"></span>
-    </div>
+<div class="portrait reveal">
+  <img src="images/portrait-aurelien.jpg"
+       alt="Aurélien Mizeret, auteur de Ce que l'IA fait de nous"
+       width="580" height="725" loading="lazy" decoding="async">
+  <span class="note">Aurélien Mizeret</span>
+</div>
     <div class="reveal">
       <span class="eyebrow">L'auteur</span>
       <h2>Aurélien Mizeret</h2>
       <div class="role">Consultant · Formateur · Éclaireur</div>
-      <p>Coach de dirigeants et « architecte de la complexité », Aurélien accompagne humains et organisations dans leurs décisions les plus difficiles — là où la stratégie, la dynamique collective et le travail intérieur ne font qu'un.</p>
-      <p>Spécialiste de l'humain avant d'être un observateur de la machine, il écrit ici en <b>éclaireur</b> : parti en avance sur la technologie, il revient au feu raconter ce qu'il a vu — et poser les questions que, dans le vacarme, nous ne prenons plus le temps de nous poser.</p>
+      <p>Coach de dirigeants et « architecte de la complexité », Aurélien accompagne humains et organisations dans leurs décisions les plus difficiles, là où la stratégie, la dynamique collective et le travail intérieur ne font qu'un.</p>
+      <p>Spécialiste de l'humain avant d'être un observateur de la machine, il écrit ici en <b>éclaireur</b> : parti en avance sur la technologie, il revient au feu raconter ce qu'il a vu et poser les questions que, dans le vacarme, nous ne prenons plus le temps de nous poser.</p>
       <div class="a-links">
         <a href="https://aurelienmizeret.com/" target="_blank" rel="noopener">aurelienmizeret.com →</a>
         <a href="https://www.linkedin.com/in/aur%C3%A9lien-mizeret/" target="_blank" rel="noopener">LinkedIn →</a>
